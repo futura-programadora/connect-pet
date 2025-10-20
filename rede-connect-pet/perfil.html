@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONTE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+
+    <!--REMIXICON-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./estilos-rede/perfil.css">
+    <title>Connect pet</title>
+</head>
+
+<body>
+    <section class="container">
+        <header class="perfil-header">
+            <!-- Topo com botão voltar e título -->
+            <section class="topo-perfil">
+                <a href="#" class="voltar">
+                    <i class="ri-arrow-left-line"></i>
+                    <p>Perfil</p>
+                </a>
+                <!--Aparecera apenas para pc -->
+                <div class="navegacao-pc">
+                    <button popovertarget="menu-pc">
+                        <img src="../imagens/barra-inferior/Vector.png" alt="navegacao-pc">
+                    </button>
+                </div>
+
+                <div id="menu-pc" popover>
+                    <a href="./tela-inicial.html" class="ativo" title="Início">
+                        <i class="ri-home-2-line"></i>
+                        <p>Início</p>
+                    </a>
+
+                    <a href="./trofeus.html" title="Medalhas">
+                        <i class="ri-award-line"></i>
+                        <p>Troféus</p>
+                    </a>
+
+                    <a href="./criar-post.html">
+                        <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+                        <p>Criar Publicação</p>
+                    </a>
+
+                    <a href="./chat-pet.html">
+                        <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+                        <p>Chatpet</p>
+                    </a>
+
+                    <a href="./favoritos.html">
+                         <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+                        <p>Favoritos</p>
+                    </a>
+                </div>
+
+            </section>
+
+            <!-- Capa de fundo -->
+            <section class="capa-fundo">
+                <div class="perfil-info">
+                    <img src="pet.jpg" alt="Foto do pet" class="foto-pet">
+                    <div class="dados-pet">
+                        <h2>Nome_pet</h2>
+                        <p>@dopet</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botão principal -->
+            <button class="btn-criar">+ Criar</button>
+
+        </header>
+
+        <section class="dados-pet">
+            <section>
+                <section>
+                    <!--dados ficticios, usar <span> para os valores e <p> para os rótulos, atraves do back end, use as classes -->
+                    <p class="idade">idade:<span>2 anos</span></p>
+                    <p class="raça">Raça:<span></span>tricolor</span></p>
+                    <p class="sexo">Sexo:<span>Macho</span></p>
+                    <p class="amigos">Amigos:<span>5 amigos</span></p>
+                </section>
+                <section>
+                    <!--usar as classes para substituir os valores pelos reais-->
+                    <h2>Personalidade</h2>
+                    <p class="personalidade">
+                        Brincalhão
+                    </p>
+                    <p class="personalidade">
+                        Amoroso
+                    </p>
+                </section>
+            </section>
+            <section>
+                <h2>Descrição</h2>
+                <p class="sobre-mim">
+                    Sou um cachorro muito amigável e adoro fazer novos amigos. Gosto de passear no parque e brincar com
+                    meus brinquedos favoritos. Estou sempre pronto para uma aventura!
+                </p>
+            </section>
+        </section>
+
+        <section class="filtros">
+            <button class="aba-posts ativa">Posts</button>
+            <button class="aba-fotos">Fotos</button>
+            <button class="aba-videos">Vídeos</button>
+            <button class="aba-sobre">Sobre</button>
+            <button class="aba-amigos">Amigos</button>
+        </section>
+
+        <section class="conteudo">
+            <!--aparecer apenas no pc-->
+            <div class="posts-recentes-apenas-pc">
+                <h2>posts recentes</h2>
+                <div class="posts-recentes">
+                    <a class="link-id-post" href="./visualizar-post.html?id=1"><img src="../imagens/logo-connect.jpg" alt="" class="post"></a>
+                </div>
+            </div>
+
+            <!-- Conteúdo dinâmico carregado aqui -->
+            <div class="container-post">
+                <div class="header-post">
+                    <img src="../imagens/logo-connect.jpg" alt="">
+                    <div>
+                        <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
+                        <div class="nome-pet-@">
+                            <p class="nome-pet">Nome do pet</p>
+                            <p class="@pet">@dopet</p>
+                        </div>
+                        <p class="data-post">2 dias atrás</p>
+                    </div>
+                    <button class="btn-acoes-post">...</button>
+                </div>
+                <div class="img-post">
+                    <img src="../imagens/logo-connect.jpg" alt="">
+                </div>
+                <!-- a quantia de comentarios deve vir atraves do id do post então certifique-se de colocar esse campo na tabela de posts-->
+                <section class="reacoes">
+                    <button class="btn-comentarios" onclick="abrirComentarios()">
+                        <span class="quantidade-comentarios">12</span> comentários
+                    </button>
+                    <button class="btn-comentar">Comentar</button>
+                    <button class="curtida"><i class="ri-heart-line"></i></button>
+                </section>
+            </div>
+        </section>
+
+        <nav class="nav-inferior">
+            <a href="./tela-inicial.html" class="ativo" title="Início">
+                <i class="ri-home-2-line"></i>
+            </a>
+
+            <a href="./trofeus.html" title="Medalhas">
+                <i class="ri-award-line"></i>
+            </a>
+            <a href="./criar-post.html">
+                <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+            </a>
+            <a href="./chat-pet.html">
+                <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+            </a>
+            <a href="./favoritos.html">
+                <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+            </a>
+        </nav>
+    </section>
+</body>
+
+</html>

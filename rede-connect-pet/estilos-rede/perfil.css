@@ -17,3 +17,14 @@
     --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 
+
+
+/*AQUI DEVERA SER A IMAGEM DE FUNDO DO PERFIL DEFINIDA E BUSCADA DO BACK END E DEFINIDA POR JS USANDO SUA CLASSE*/
+
+.capa-fundo {
+  background-image: url('../../imagens/fundo-provisorio.png');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
