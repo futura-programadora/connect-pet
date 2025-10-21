@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,152 @@
     <link rel="stylesheet" href="./estilos-rede/tela-inicial.css">
     <title>Connect pet</title>
 </head>
+
 <body>
     <section class="container">
+        <header>
+            <section class="topo-header">
+                <a href="./match-pet.html"><img src="../imagens/logo-matchpet-provisoria.png" alt="" class="matchpet"></a>
+                <button popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
 
+                <div id="mais-opcoes" popover>
+                    <a href="./perfil.html" title="Perfil">
+                        <i class="ri-user-line"></i>
+                        <p>Perfil</p>
+                    </a>
+
+                    <a href="./configuracoes.html" title="Configurações">
+                        <i class="ri-settings-3-line"></i>
+                        <p>Configurações</p>
+                    </a>
+
+                    <a href="./ajuda.html" title="Ajuda">
+                        <i class="ri-question-line"></i>
+                        <p>Ajuda</p>
+                    </a>
+
+                    <button class="sair" title="Sair">
+                        <i class="ri-shut-down-line"></i>
+                        <p>Sair</p>
+                    </button>
+                </div>
+            </section>
+            <section>
+                <a href="./perfil.html?pet_id=1"><img src="../imagens/rex.png" alt="" class="foto-perfil-pet"></a>
+                <section class="barra-pesquisa-filtro">
+                    <div class="barra-de-pesquisa">
+                        <input class="pesquisa" type="text" placeholder="Pesquisar">
+                        <button class="pesquisar">
+                            <img src="../icons/icone-pesquisar.png" alt="">
+                        </button>
+                    </div>
+                    <button popovertarget="filtros" class="filtrar">
+                        <img src="../icons/icone-filtro.png" alt="">
+                    </button>
+                    <div id="filtros" popover>
+                        <button class="Recentes">Recentes</button>
+                        <button class="Ultima-semana">Última semana</button>
+                        <button class="Mais-vistos">Mais vistos</button>
+                        <button class="Amigos">Amigos</button>
+                    </div>
+                </section>
+
+                <!--Aparecera apenas para pc -->
+                <div class="navegacao-pc">
+                    <button popovertarget="menu-pc">
+                        <img src="../imagens/barra-inferior/Vector.png" alt="navegacao-pc">
+                    </button>
+                </div>
+
+                <div id="menu-pc" popover>
+                    <a href="./tela-inicial.html" class="ativo" title="Início">
+                        <i class="ri-home-2-line"></i>
+                        <p>Início</p>
+                    </a>
+
+                    <a href="./trofeus.html" title="Medalhas">
+                        <i class="ri-award-line"></i>
+                        <p>Troféus</p>
+                    </a>
+
+                    <a href="./criar-post.html">
+                        <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+                        <p>Criar Publicação</p>
+                    </a>
+
+                    <a href="./chat-pet.html">
+                        <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+                        <p>Chatpet</p>
+                    </a>
+
+                    <a href="./favoritos.html">
+                         <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+                        <p>Favoritos</p>
+                    </a>
+                </div>
+            </section>
+        </header>
+
+        <section class="recomendacoes">
+            <div class="perfil-recomendado">
+                <a href="./conhecer-perfil.html?pet_id=1"><img class="img-perfil-recomendado" src="../imagens/mia.png" alt=""></a>
+                <button class="seguir">+</button>
+            </div>
+        </section>
+
+        <section class="posts">
+            <section class="regiao-post">
+                <!-- Conteúdo dinâmico carregado aqui, apenas posts com o pet_id diferente do pet_id do perfil -->
+                <div class="container-post">
+                    <div class="header-post">
+                        <img src="../imagens/logo-connect.jpg" alt="">
+                        <div>
+                            <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
+                            <div class="nome-pet-@">
+                                <p class="nome-pet">Nome do pet</p>
+                                <p class="@pet">@dopet</p>
+                            </div>
+                            <p class="data-post">2 dias atrás</p>
+                        </div>
+                        <button class="btn-seguir">Seguir</button>
+                    </div>
+                    <div class="conteudo-post">
+                        <img src="../imagens/logo-connect.jpg" alt="">
+                    </div>
+                    <!-- a quantia de comentarios deve vir atraves do id do post então certifique-se de colocar esse campo na tabela de posts-->
+                    <section class="reacoes">
+                        <button class="btn-comentarios" onclick="abrirComentarios()">
+                            <span class="quantidade-comentarios">12</span> comentários
+                        </button>
+                        <button class="btn-comentar">Comentar</button>
+                        <button class="curtida"><i class="ri-heart-line"></i></button>
+                    </section>
+                </div>
+            </section>
+        </section>
+
+
+
+        <!--APARECE APENAS PARA CELULAR-->
+        <nav class="nav-inferior">
+            <a href="./tela-inicial.html" class="ativo" title="Início">
+                <i class="ri-home-2-line"></i>
+            </a>
+
+            <a href="./trofeus.html" title="Medalhas">
+                <i class="ri-award-line"></i>
+            </a>
+            <a href="./criar-post.html">
+                <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+            </a>
+            <a href="./chat-pet.html">
+                <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+            </a>
+            <a href="./favoritos.html">
+                <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+            </a>
+        </nav>
     </section>
 </body>
+
 </html>
