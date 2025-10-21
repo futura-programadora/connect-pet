@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.suez-one-regular {
+  font-family: "Suez One", serif;
+}
+
+:root {
+    --preto: #000000;
+    --roxo: #5f0fe2;
+    --laranja: #ff914d;
+    --verde: #2ecc71;
+    --branco-amarelado: #F3EEE8;
+    --branco: #f5f5f5;
+    --fundo-post: #EFEFEF;
+
+    --border-padrao: 10px;
+    --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
+}
+
