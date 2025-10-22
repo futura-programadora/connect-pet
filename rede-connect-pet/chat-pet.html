@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,118 @@
     <link rel="stylesheet" href="./estilos-rede/chat-pet.css">
     <title>Connect pet</title>
 </head>
+
 <body>
     <section class="container">
-        
+        <header>
+            <!--Aparecera apenas para pc -->
+            <div class="navegacao-pc">
+                <a href="#" class="voltar">
+                    <i class="ri-arrow-left-line"></i>
+                </a>
+                <button popovertarget="menu-pc">
+                    <img src="../imagens/barra-inferior/Vector.png" alt="navegacao-pc">
+                </button>
+            </div>
+
+            <div id="menu-pc" popover>
+                <a href="./tela-inicial.html" class="ativo" title="Início">
+                    <i class="ri-home-2-line"></i>
+                    <p>Início</p>
+                </a>
+
+                <a href="./trofeus.html" title="Medalhas">
+                    <i class="ri-award-line"></i>
+                    <p>Troféus</p>
+                </a>
+
+                <a href="./criar-post.html">
+                    <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+                    <p>Criar Publicação</p>
+                </a>
+
+                <a href="./chat-pet.html">
+                    <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+                    <p>Chatpet</p>
+                </a>
+
+                <a href="./favoritos.html">
+                    <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+                    <p>Favoritos</p>
+                </a>
+            </div>
+            <img src="../imagens/logo-chatpet.png" alt="">
+            <section class="barra-pesquisa-filtro">
+                <div class="barra-de-pesquisa">
+                    <input class="pesquisa" type="text" placeholder="Pesquisar">
+                    <button class="pesquisar">
+                        <img src="../icons/icone-pesquisar.png" alt="">
+                    </button>
+                </div>
+                <button popovertarget="filtros" class="filtrar">
+                    <img src="../icons/icone-filtro.png" alt="">
+                </button>
+                <div id="filtros" popover>
+                    <button class="Recentes">Recentes</button>
+                    <button class="Ultima-semana">Última semana</button>
+                    <button class="Mais-vistos">Mais vistos</button>
+                    <button class="Amigos">Amigos</button>
+                </div>
+            </section>
+        </header>
+
+        <section class="amigos-chat">
+            <a href="./conversa.html?pet_id_2=1?pet_id_1=4"><img src="../imagens/mia.png" alt="" class="logo-pet-amigo"></a>
+        </section>
+
+        <section class="conversas">
+            <a href="./conversa.htmlpet_id_2=1?pet_id_1=4">
+                <div class="conversa">
+                    <div>
+                        <img src="../imagens/mia.png" alt="Logo do amigo" class="logo-amigo">
+                        <div class="nome-utm-amigo">
+                            <h2>Mia</h2>
+                            <p class="ultima-mensagem">Oi colega</p>
+                        </div>
+                    </div>
+                    <div class="mensagens-nao-lidas">
+                        <div class="mensagens-novas">
+                            <span class="count-novas-mensagens"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </section>
+
+        <section class="nova-conversa-grupo">
+            <button popovertarget="criar-chat">Criar +</button>
+
+            <div id="criar-chat" popover>
+                <a href="./criar-grupo-conversa.html">Criar grupo</a>
+            </div>
+        </section>
+
+        <!--APARECE APENAS PARA CELULAR-->
+        <nav class="nav-inferior">
+            <a href="./tela-inicial.html" class="ativo" title="Início">
+                <i class="ri-home-2-line"></i>
+            </a>
+
+            <a href="./trofeus.html" title="Medalhas">
+                <i class="ri-award-line"></i>
+            </a>
+            <a href="./criar-post.html">
+                <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+            </a>
+            <a href="./chat-pet.html">
+                <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+            </a>
+            <a href="./favoritos.html">
+                <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+            </a>
+        </nav>
     </section>
 </body>
+
 </html>
