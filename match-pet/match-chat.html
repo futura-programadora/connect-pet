@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONTE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+
+    <!--REMIXICON-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./estilos-match/match-chat.css">
+    <title>Connect pet</title>
+</head>
+<body>
+    <section class="container">
+        <header>
+            <!--Aparecera apenas para pc -->
+            <div class="navegacao-pc">
+                <a href="#" class="voltar">
+                    <i class="ri-arrow-left-line"></i>
+                </a>
+                <button popovertarget="menu-pc">
+                    <img src="../imagens/barra-inferior/Vector.png" alt="navegacao-pc">
+                </button>
+            </div>
+
+            <div id="menu-pc" popover>
+                <a href="../rede-connect-pet/tela-inicial.html" class="ativo" title="Início">
+                    <i class="ri-home-2-line"></i>
+                    <p>Início</p>
+                </a>
+
+                <a href="../rede-connect-pet/trofeus.html" title="Medalhas">
+                    <i class="ri-award-line"></i>
+                    <p>Troféus</p>
+                </a>
+
+                <a href="../rede-connect-pet/criar-post.html">
+                    <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+                    <p>Criar Publicação</p>
+                </a>
+
+                <a href="../rede-connect-pet/chat-pet.html">
+                    <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+                    <p>Chatpet</p>
+                </a>
+
+                <a href="../rede-connect-pet/favoritos.html">
+                    <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+                    <p>Favoritos</p>
+                </a>
+            </div>
+            <img src="../imagens/logo-matchpet-provisoria.png" alt="">
+            <section class="barra-pesquisa-filtro">
+                <div class="barra-de-pesquisa">
+                    <input class="pesquisa" type="text" placeholder="Pesquisar">
+                    <button class="pesquisar">
+                        <img src="../icons/icone-pesquisar.png" alt="">
+                    </button>
+                </div>
+                <button popovertarget="filtros" class="filtrar">
+                    <img src="../icons/icone-filtro.png" alt="">
+                </button>
+                <div id="filtros" popover>
+                    <button class="Recentes">Recentes</button>
+                    <button class="Ultima-semana">Última semana</button>
+                    <button class="Mais-vistos">Mais vistos</button>
+                    <button class="Amigos">Amigos</button>
+                </div>
+            </section>
+        </header>
+
+        <!--TERMINAR A ESTRUTURA DA PAGINA-->
+    </section>
+</body>
+</html>
