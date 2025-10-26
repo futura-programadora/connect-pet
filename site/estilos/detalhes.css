@@ -5,15 +5,151 @@
 }
 
 :root {
-    --preto: #000000;
-    --roxo: #5f0fe2;
-    --laranja: #ff914d;
-    --verde: #2ecc71;
-    --branco-amarelado: #F3EEE8;
-    --branco: #f5f5f5;
-    --fundo-post: #EFEFEF;
+  --preto: #000000;
+  --roxo: #5f0fe2;
+  --laranja: #ff914d;
+  --verde: #2ecc71;
+  --branco-amarelado: #F3EEE8;
+  --branco: #f5f5f5;
+  --fundo-post: #EFEFEF;
 
-    --border-padrao: 10px;
-    --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
+  --border-padrao: 10px;
+  --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 
+/*APRESENTAÇÃO DETALHES*/
+
+.detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F8F8FF;
+  padding: 70px 40px;
+
+  & .posts-pets {
+    width: 40vw;
+    max-width: 600px;
+    margin: auto;
+    min-width: 300px;
+  }
+
+  & section>img {
+    width: 60px;
+  }
+
+  & section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: gray;
+    width: 45%;
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
+/*MINI POSTS*/
+
+.mini-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--branco-amarelado);
+  padding: 20px;
+}
+
+.mini-posts img {
+  flex: 1 1 300px;
+  /* mínimo de 300px, mas se adapta */
+  max-width: 250px;
+  /* impede de ficarem grandes demais */
+  object-fit: cover;
+  /* mantém o corte proporcional */
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.mini-posts img:hover {
+  transform: scale(1.03);
+}
+
+/*POSTS MAIORES*/
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  /* permite quebrar linha automaticamente */
+  justify-content: center;
+  /* centraliza os cards */
+  gap: 25px;
+  /* espaçamento entre as imagens */
+  background-color: #F8F8FF;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.posts img {
+  flex: 1 1 320px;
+  /* cada card ocupa no mínimo 320px, mas se adapta */
+  max-width: 420px;
+  /* evita que fiquem grandes demais */
+  object-fit: cover;
+  /* mantém o corte proporcional da imagem */
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.posts img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+  .detalhes {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .detalhes .posts-pets,
+  .detalhes section {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 30px;
+  }
+
+  .posts img {
+    flex: 1 1 220px;
+    /* cada card ocupa no mínimo 320px, mas se adapta */
+    max-width: 320px;
+    /* evita que fiquem grandes demais */
+    object-fit: cover;
+    /* mantém o corte proporcional da imagem */
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .mini-posts img {
+  flex: 1 1 200px;
+  /* mínimo de 300px, mas se adapta */
+  max-width: 250px;
+  /* impede de ficarem grandes demais */
+  object-fit: cover;
+  /* mantém o corte proporcional */
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+}
