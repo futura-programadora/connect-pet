@@ -75,6 +75,8 @@ header {
 }
 
 .login-cadastro {
+  display: flex;
+  justify-content: center;
   background-color: var(--roxo);
   padding: 15px;
   border-radius: var(--border-padrao);
