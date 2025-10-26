@@ -5,15 +5,422 @@
 }
 
 :root {
-    --preto: #000000;
-    --roxo: #5f0fe2;
-    --laranja: #ff914d;
-    --verde: #2ecc71;
-    --branco-amarelado: #F3EEE8;
-    --branco: #f5f5f5;
-    --fundo-post: #EFEFEF;
+  --preto: #000000;
+  --roxo: #5f0fe2;
+  --laranja: #ff914d;
+  --verde: #2ecc71;
+  --branco-amarelado: #F3EEE8;
+  --branco: #f5f5f5;
+  --fundo-post: #EFEFEF;
+  --fundo-apresentacao: #F3EEE8;
 
-    --border-padrao: 10px;
-    --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
+  --border-padrao: 10px;
+  --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 
+/*APRESENTAÇÃO DO CONNECT PET*/
+
+.apresentacao {
+  background-color: var(--fundo-apresentacao);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  margin-bottom: 40px;
+
+  & img {
+    width: 350px;
+  }
+}
+
+.img-apresentacao {
+  display: flex;
+  justify-content: center;
+  width: 45vw;
+  margin: auto;
+}
+
+.texto {
+  width: 45vw;
+  margin: auto;
+
+  & h2 {
+    font-family: "Suez One";
+    font-size: 25px;
+    font-weight: normal;
+    color: var(--roxo);
+  }
+
+  & p {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 15px;
+    color: gray;
+  }
+}
+
+/*DIFERENCIAIS*/
+
+.diferenciais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+  
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 15px;
+  background-color: #F8F8FF;
+  border: 2px solid gray;
+  border-radius: var(--border-padrao);
+  height: 200px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.205);
+}
+
+.card>img {
+  background-color: var(--verde);
+  padding: 10px;
+  width: 70px;
+  border-radius: var(--border-padrao);
+  border: 4px solid #73FFAE55;
+  margin-top: -35px;
+}
+
+.texto-card>h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--roxo);
+  font-family: "Suez One";
+  margin-bottom: 15px;
+}
+
+.texto-card>p {
+  font-size: 14px;
+  color: gray;
+  font-family: sans-serif;
+}
+
+
+/*ILUSTRAÇÕES*/
+
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+  background-color: #faf6f2;
+}
+
+/* FOTO GRANDE (HAMSTER) */
+.foto1 > div {
+  position: relative;
+  width: 300px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.foto1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foto1 div div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  color: #4b0082;
+  border-radius: 10px 10px 0 0;
+}
+
+/* FOTO DUPLA (CACHORRO E GATO) */
+.foto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.foto > div {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foto div div {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 30px 0 0 30px;
+  font-weight: 600;
+  color: #4b0082;
+  box-shadow: inset -5px 0 10px rgba(75,0,130,0.3);
+}
+
+/*DEPOIPETS*/
+
+/* ====== ESTILO GERAL ====== */
+.depoimentos {
+  background-color: #c8f5e6;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.depoimentos h2 {
+  font-size: 28px;
+  background-color: #FFFFFF60;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #222;
+  border: 2px solid #8fd8c3;
+  display: inline-block;
+  padding: 8px 40px;
+  border-radius: 40px;
+  width: 65%;
+}
+
+/* ====== CONTAINER ====== */
+.container-depoimentos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* ====== BLOCO DEPOIMENTO ====== */
+.depoimento {
+  background: #fff;
+  border-radius: 25px;
+  padding: 25px 30px;
+  box-shadow: 5px 5px 0 #f0cbbf;
+  width: 350px;
+  transition: 0.3s;
+  text-align: left;
+}
+
+.depoimento:hover {
+  transform: translateY(-5px);
+}
+
+/* ====== CABEÇALHO PET (foto + nome + etiqueta) ====== */
+.pet-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.pet-nome img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pet-nome h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  border: none;
+}
+
+.pet-nome p {
+  font-size: 13px;
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin-left: auto;
+}
+
+/* ====== TEXTO ====== */
+.depoimento > div > p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.aventureiro { background: #e9edff; color: #4b5ed7; border: #4b5ed7; }
+.exploradora { background: #f5e7ff; color: #b066e1; border: #b066e1; }
+.fofinho { background: #e9f5ff; color: #6ba8ff; border: #6ba8ff; }
+
+
+/*CARROSSEL DE IMAGENS PERSONALIZADAS*/
+/* ====== SEÇÃO PRINCIPAL ====== */
+.carrossel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%; /* 🔹 Cresce até 1200px, depois para */
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* ====== SETAS ====== */
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  color: black;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.seta:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.esquerda {
+  left: 15px;
+}
+
+.direita {
+  right: 15px;
+}
+
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 700px) {
+  .fotos {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .foto,
+  .foto1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foto1 > div,
+  .foto > div {
+    width: 90%; /* mesma largura para todos */
+    max-width: 400px; /* limite para não esticar demais */
+    height: auto; /* altura conforme a imagem */
+  }
+
+  .foto img,
+  .foto1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 800px) {
+  .container-depoimentos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .depoimento {
+    width: 90%;
+  }
+
+  .apresentacao {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  
+  .texto {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .carrossel {
+    width: min(90%, 800px);
+    border-radius: 15px;
+  }
+
+  .seta {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carrossel {
+    width: min(95%, 500px);
+  }
+
+  .seta {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+
+}
+
+@media (max-width: 400px) {
+  .img-apresentacao {
+    width: 80vw;
+  }
+
+  .apresentacao img {
+    width: 100%;
+  }
+}

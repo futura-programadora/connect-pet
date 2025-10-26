@@ -14,6 +14,6 @@
     --fundo-post: #EFEFEF;
 
     --border-padrao: 10px;
-
+    --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 

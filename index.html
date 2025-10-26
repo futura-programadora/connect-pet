@@ -26,8 +26,8 @@
                 <img src="../imagens/logo-connect.jpg" alt="" class="logo">
                 <section class="barra-pesquisar">
 
-                    <input type="text">
-                    <i></i>
+                    <input id="pesquisa" type="text" placeholder="Pesquisar sobre connect pet ">
+                    <i class="ri-search-2-line"></i>
                 </section>
                 <section class="login-cadastro">
                     <p><a href="./site/login.html">Login</a> / <a href="./site/cadastro.html">Cadastro</a></p>
@@ -42,7 +42,7 @@
                     <i class="ri-menu-fold-line"></i>
                     <p>Detalhes</p>
                 </a>
-                <a href="" class="redes instagran">
+                <a href="" class="redes instagram">
                     <i class="ri-instagram-line"></i>
                 </a>
                 <a href="" class="redes facebook">
@@ -67,7 +67,7 @@
         <section class="diferenciais">
             <div class="card">
                 <img src="./imagens/cachorro.png" alt="">
-                <section>
+                <section class="texto-card">
                     <h4>Perfis Exclusivos para Pets</h4>
                     <p>Crie um espaço único para seu pet, com fotos, biografia, características e muito mais, como se
                         fosse uma rede social só dele.</p>
@@ -75,7 +75,7 @@
             </div>
             <div class="card">
                 <img src="./imagens/brilho.png" alt="">
-                <section>
+                <section class="texto-card">
                     <h4>Compartilhe Momentos Especiais</h4>
                     <p>Publique fotos, vídeos e histórias do dia a dia do seu pet e acompanhe a vida de outros animais
                         na comunidade.</p>
@@ -83,14 +83,14 @@
             </div>
             <div class="card">
                 <img src="./imagens/casa-animais.png" alt="">
-                <section>
+                <section class="texto-card">
                     <h4>Conexão entre Donos e Pets</h4>
                     <p>Faça amizades, troque experiências e dicas com outros donos apaixonados por seus animais.</p>
                 </section>
             </div>
             <div class="card">
                 <img src="./imagens/usuario.png" alt="">
-                <section>
+                <section class="texto-card">
                     <h4>Comunidade Segura e Afetiva</h4>
                     <p>Um ambiente pensado para celebrar o amor pelos pets, com foco em interação saudável e positiva.
                     </p>
@@ -98,7 +98,7 @@
             </div>
         </section>
         <section class="fotos">
-            <section class="foto">
+            <section class="foto1">
                 <div>
                     <img src="./imagens/hamister.jpg" alt="">
                     <div>
@@ -123,44 +123,55 @@
         </section>
         <section class="depoimentos">
             <h2>Depoipets</h2>
-            <div class="depoimento">
-                <div>
-                    <img src="./imagens/rex.png" alt="">
-                    <h2>Rex</h2>
-                    <p>Adoro ter meu perfil no Connect Pet! Aqui posso mostrar minhas corridas no parque e conhecer
-                        outros cães que também amam brincar. Fiz vários novos amigos!</p>
+            <section class="container-depoimentos">
+                <div class="depoimento">
+                    <div>
+                        <section class="pet-nome">
+                            <img src="./imagens/rex.png" alt="">
+                            <h2>Rex</h2>
+                            <p class="aventureiro">Aventureiro</p>
+                        </section>
+                        <p>Adoro ter meu perfil no Connect Pet! Aqui posso mostrar minhas corridas no parque e conhecer
+                            outros cães que também amam brincar. Fiz vários novos amigos!</p>
+                    </div>
+                    
                 </div>
-                <p>Aventureiro</p>
-            </div>
-            <div class="depoimento">
-                <div>
-                    <img src="./imagens/mia.png" alt="">
-                    <h2>Mia</h2>
-                    <p>Finalmente tenho um espaço só meu! Posso postar minhas fotos dormindo nas caixas e ainda
-                        conversar com outros gatos que entendem o quanto isso é importante.</p>
+                <div class="depoimento">
+                    <div>
+                        <section class="pet-nome">
+                            <img src="./imagens/mia.png" alt="">
+                            <h2>Mia</h2>
+                            <p class="exploradora">Exploradora</p>
+                        </section>
+                        <p>Finalmente tenho um espaço só meu! Posso postar minhas fotos dormindo nas caixas e ainda
+                            conversar com outros gatos que entendem o quanto isso é importante.</p>
+                    </div>
+                    
                 </div>
-                <p>Exploradora</p>
-            </div>
-            <div class="depoimento">
-                <div>
-                    <img src="./imagens/bolinha.png" alt="">
-                    <h2>Bolinha</h2>
-                    <p>No Connect Pet eu conto sobre minhas aventuras pulando pelo jardim. É tão legal ter uma rede onde
-                        nós, pets, somos as estrelas de verdade!</p>
+                <div class="depoimento">
+                    <div>
+                        <section class="pet-nome">
+                            <img src="./imagens/bolinha.png" alt="">
+                            <h2>Bolinha</h2>
+                            <p class="fofinho">Fofinho</p>
+                        </section>
+                        <p>No Connect Pet eu conto sobre minhas aventuras pulando pelo jardim. É tão legal ter uma rede onde
+                            nós, pets, somos as estrelas de verdade!</p>
+                    </div>
+                    
                 </div>
-                <p>Fofinho</p>
-            </div>
+            </section>
         </section>
         <section class="carrossel">
-            <button class="seta esquerda">←</button>
+            <button class="seta esquerda"><i class="ri-arrow-left-line"></i></button>
 
             <div class="container">
                 <div class="slide ativo">
-                    <img src="imagem-carrossel.jpg" alt="Pessoa e cachorro dando as mãos">
+                    <img src="./imagens/imagem-carrossel.png" alt="Pessoa e cachorro dando as mãos">
                 </div>
             </div>
 
-            <button class="seta direita">→</button>
+            <button class="seta direita"><i class="ri-arrow-right-line"></i></button>
         </section>
 
         <footer>
