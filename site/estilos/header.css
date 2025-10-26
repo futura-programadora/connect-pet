@@ -84,10 +84,13 @@ header {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 14px;
+  text-align: center;
 
   & p {
     margin: auto;
+    text-align: center;
   }
+
 }
 
 /*REDES*/
@@ -253,7 +256,7 @@ header {
 
   .login-cadastro {
     font-size: 12px;
-    padding: 10px 8px;
+    padding: 10px ;
   }
 
   .navegacao .link {
