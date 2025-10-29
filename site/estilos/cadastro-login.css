@@ -17,3 +17,158 @@
     --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 
+.cadastro-login-container {
+  background: var(--gradiente-principal);
+  padding: 30px;
+
+  & p {
+    text-align: center;
+    padding: 10px 0px;
+    color: var(--branco);
+  }
+}
+
+form {
+  display: flex;
+  background-color: #59595956;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 35px;
+  border-radius: var(--border-padrao);
+  border: 1px solid var(--branco);
+
+  & section {
+    width: 45%;
+    margin: auto;
+    max-width: 400px;
+  }
+
+  & section > h2 {
+    font-family: "Suez One";
+    color: var(--branco);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  & section > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0px;
+    font-weight: bold;
+    border-radius: var(--border-padrao);
+    border: none;
+    color: var(--preto);
+  }
+
+  & .img-post {
+    width: 40vw;
+    max-width: 500px;
+    min-width: 250px;
+    margin: auto;
+  }
+}
+
+fieldset {
+  border-radius: var(--border-padrao);
+  padding: 5px 8px;
+  color: var(--branco);
+  background-color: #0000005c;
+  font-weight: bold;
+
+  & legend {
+    padding: 0 5px;
+  }
+}
+
+input {
+  width: 100%;
+  height: 25px;
+  border-radius: 5px;
+  color: var(--branco);
+  border: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.continuar-com-google p {
+  color: var(--preto);
+}
+
+.bnt-logar, .bnt-cadastrar {
+  background-color: var(--roxo);
+  color: var(--branco);
+  border: none;
+}
+
+.bnt-logar:hover {
+  background-color: #731ffa;
+}
+
+.bnt-cadastrar:hover {
+  background-color: #731ffa;
+}
+
+/* ====== SEÇÃO ACEITAR TERMOS ====== */
+.aceitar-termos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0 20px;
+  font-size: 0.9rem;
+  color: #e5e5e5;
+  line-height: 1.4;
+  width: 100%;
+}
+
+/* Checkbox */
+.aceitar-termos input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #8b5cf6; /* roxo moderno */
+  flex-shrink: 0;
+}
+
+/* Texto */
+.aceitar-termos p {
+  margin: 0;
+  flex: 1;
+}
+
+/* Links */
+.aceitar-termos a {
+  color: #c084fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.aceitar-termos a:hover {
+  text-decoration: underline;
+}
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 608px) {
+  form {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  form section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .img-post {
+    width: 80vw;
+    max-width: 400px;
+    min-width: 200px;
+  }
+}
