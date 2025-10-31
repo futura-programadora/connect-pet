@@ -21,7 +21,7 @@
         <header>
             <section class="topo-header">
                 <a href="../match-pet/match-inicio.html"><img src="../imagens/logo-matchpet-provisoria.png" alt="" class="matchpet"></a>
-                <button popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
+                <button id="outras-opcoes" popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
 
                 <div id="mais-opcoes" popover>
                     <a href="./perfil.html" title="Perfil">
@@ -45,8 +45,8 @@
                     </button>
                 </div>
             </section>
-            <section>
-                <a href="./perfil.html?pet_id=1"><img src="../imagens/rex.png" alt="" class="foto-perfil-pet"></a>
+            <section class="bottom-header">
+                <a href="./perfil.html?pet_id=1"><img class="foto-perfil-pet" src="../imagens/rex.png" alt=""></a>
                 <section class="barra-pesquisa-filtro">
                     <div class="barra-de-pesquisa">
                         <input class="pesquisa" type="text" placeholder="Pesquisar">
@@ -58,6 +58,7 @@
                         <img src="../icons/icone-filtro.png" alt="">
                     </button>
                     <div id="filtros" popover>
+                        <h2>Filtros</h2>
                         <button class="Recentes">Recentes</button>
                         <button class="Ultima-semana">Última semana</button>
                         <button class="Mais-vistos">Mais vistos</button>
@@ -73,7 +74,7 @@
                 </div>
 
                 <div id="menu-pc" popover>
-                    <a href="./tela-inicial.html" class="ativo" title="Início">
+                    <a href="#" class="ativo" title="Início">
                         <i class="ri-home-2-line"></i>
                         <p>Início</p>
                     </a>
@@ -102,10 +103,17 @@
         </header>
 
         <section class="recomendacoes">
-            <div class="perfil-recomendado">
-                <a href="./conhecer-perfil.html?pet_id=1"><img class="img-perfil-recomendado" src="../imagens/mia.png" alt=""></a>
-                <button class="seguir">+</button>
-            </div>
+            <h2>Sujestões</h2>
+            <section class="perfis-recomendados">
+                <div class="perfil-recomendado">
+                    <a href="./conhecer-perfil.html?pet_id=1"><img class="img-perfil-recomendado" src="../imagens/mia.png" alt=""></a>
+                    <button class="seguir"><p>+</p></button>
+                </div>
+                <div class="perfil-recomendado">
+                    <a href="./conhecer-perfil.html?pet_id=1"><img class="img-perfil-recomendado" src="../imagens/mia.png" alt=""></a>
+                    <button class="seguir"><p>+</p></button>
+                </div>
+            </section>
         </section>
 
         <main class="posts">
@@ -113,14 +121,16 @@
                 <!-- Conteúdo dinâmico carregado aqui, apenas posts com o pet_id diferente do pet_id do perfil -->
                 <div class="container-post">
                     <div class="header-post">
-                        <a href="./conhecer-perfil.html?pet_id=1"><img src="../imagens/logo-connect.jpg" alt=""></a>
-                        <div>
-                            <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
-                            <div class="nome-pet-@">
-                                <p class="nome-pet">Nome do pet</p>
-                                <p class="@pet">@dopet</p>
+                        <div class="foto-perfil-e-nome">
+                            <a href="./conhecer-perfil.html?pet_id=1"><img src="../imagens/logo-connect.jpg" alt=""></a>
+                            <div>
+                                <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
+                                <div class="nome-pet-dopet">
+                                    <p class="nome-pet">Nome do pet</p>
+                                    <p class="identificacao-pet">@dopet</p>
+                                </div>
+                                <p class="data-post">2 dias atrás</p>
                             </div>
-                            <p class="data-post">2 dias atrás</p>
                         </div>
                         <button class="btn-seguir">Seguir</button>
                     </div>
@@ -132,8 +142,42 @@
                         <button class="btn-comentarios" onclick="abrirComentarios()">
                             <span class="quantidade-comentarios">12</span> comentários
                         </button>
-                        <button class="btn-comentar">Comentar</button>
-                        <button class="curtida"><i class="ri-heart-line"></i></button>
+                        <div>
+                            <button class="btn-comentar">Comentar</button>
+                            <button class="curtida"><i class="ri-heart-line"></i></button>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section class="regiao-post">
+                <!-- Conteúdo dinâmico carregado aqui, apenas posts com o pet_id diferente do pet_id do perfil -->
+                <div class="container-post">
+                    <div class="header-post">
+                        <div class="foto-perfil-e-nome">
+                            <a href="./conhecer-perfil.html?pet_id=1"><img src="../imagens/logo-connect.jpg" alt=""></a>
+                            <div>
+                                <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
+                                <div class="nome-pet-dopet">
+                                    <p class="nome-pet">Nome do pet</p>
+                                    <p class="identificacao-pet">@dopet</p>
+                                </div>
+                                <p class="data-post">2 dias atrás</p>
+                            </div>
+                        </div>
+                        <button class="btn-seguir">Seguir</button>
+                    </div>
+                    <div class="conteudo-post">
+                        <img src="../imagens/logo-connect.jpg" alt="">
+                    </div>
+                    <!-- a quantia de comentarios deve vir atraves do id do post então certifique-se de colocar esse campo na tabela de posts-->
+                    <section class="reacoes">
+                        <button class="btn-comentarios" onclick="abrirComentarios()">
+                            <span class="quantidade-comentarios">12</span> comentários
+                        </button>
+                        <div>
+                            <button class="btn-comentar">Comentar</button>
+                            <button class="curtida"><i class="ri-heart-line"></i></button>
+                        </div>
                     </section>
                 </div>
             </section>
