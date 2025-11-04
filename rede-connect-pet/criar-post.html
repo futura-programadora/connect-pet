@@ -11,12 +11,239 @@
     <!--REMIXICON-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./estilos-rede/criar-post.css">
-    <title>Connect pet</title>
+    <title>Connect Pet — Em desenvolvimento Criar postagem</title>
+
+    <style>
+      @charset "UTF-8";
+
+      :root {
+        --roxo-principal: #6b39bd;
+        --roxo-claro: #9f7bdc;
+        --branco-amarelado: #F3EEE8;
+        --branco: #ffffff;
+        --cinza-claro: #f4f4f6;
+        --texto: #2b2b2b;
+        --sombra: rgba(0,0,0,0.06);
+        --radius: 14px;
+      }
+
+      * { box-sizing: border-box; }
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: "Suez One", serif;
+        background: var(--branco-amarelado);
+        color: var(--texto);
+      }
+
+      .dev-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 820px;
+        background: var(--branco);
+        border-radius: var(--radius);
+        box-shadow: 0 10px 30px var(--sombra);
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .illustration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+      }
+
+      .pata {
+        width: 140px;
+        height: 140px;
+        fill: var(--roxo-claro);
+        stroke: var(--roxo-principal);
+        stroke-width: 3;
+        border-radius: 50%;
+        background: linear-gradient(180deg, rgba(107,57,189,0.06), transparent);
+        padding: 8px;
+        box-shadow: 0 6px 18px rgba(107,57,189,0.06), inset 0 -6px 12px rgba(255,255,255,0.6);
+        transition: transform .32s ease;
+      }
+
+      .pata:hover {
+        transform: translateY(-6px);
+      }
+
+      .titulo {
+        margin: 0 0 6px 0;
+        color: var(--roxo-principal);
+        font-size: 1.75rem;
+      }
+
+      .descricao {
+        margin: 0 0 18px 0;
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      .status-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+      }
+
+      .status-text {
+        font-weight: 600;
+        color: #666;
+        font-size: 0.95rem;
+        min-width: 82px;
+      }
+
+      .progress {
+        flex: 1 1 220px;
+        height: 12px;
+        background: var(--cinza-claro);
+        border-radius: 999px;
+        overflow: hidden;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: var(--roxo-principal);
+        width: 34%;
+        transition: width 600ms cubic-bezier(.22,.9,.32,1);
+      }
+
+      .percent {
+        font-size: 0.85rem;
+        color: #666;
+        min-width: 40px;
+        text-align: right;
+      }
+
+      .acoes {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-top: 6px;
+      }
+
+      .btn-outline, .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--roxo-principal);
+        border: 1px solid rgba(107,57,189,0.12);
+        transition: all .18s ease;
+      }
+
+      .btn-outline:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(107,57,189,0.06);
+      }
+
+      .btn-primary {
+        background: var(--roxo-principal);
+        color: var(--branco);
+        border: none;
+      }
+
+      .btn-primary.saved {
+        background: #3f1f7a;
+        opacity: 0.95;
+      }
+
+      .pequeno {
+        margin: 16px 0 0 0;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 880px) {
+        .card {
+          grid-template-columns: 1fr;
+          padding: 20px;
+          gap: 14px;
+        }
+
+        .illustration { order: -1; }
+        .pata { width: 120px; height: 120px; }
+      }
+
+      @media (max-width: 420px) {
+        .titulo { font-size: 1.4rem; }
+        .descricao { font-size: 0.95rem; }
+        .progress { height: 10px; }
+      }
+
+      .btn-outline:focus, .btn-primary:focus {
+        outline: 3px solid rgba(107,57,189,0.18);
+        outline-offset: 3px;
+      }
+    </style>
 </head>
 <body>
-    <section class="container">
-        
-    </section>
+  <main class="dev-page">
+    <div class="card">
+
+      <div>
+        <h1 class="titulo">Área em desenvolvimento</h1>
+        <p class="descricao">
+          Estamos preparando algo especial para os pets — logo você poderá Criar postagens Novas.
+        </p>
+
+        <div class="status-row">
+          <div class="status-text">Progresso</div>
+          <div class="progress">
+            <div class="progress-fill"></div>
+          </div>
+          <small class="percent">34%</small>
+        </div>
+
+        <div class="acoes">
+          <a href="javascript:history.back()" class="btn-outline"><i class="ri-arrow-left-line"></i> Voltar</a>
+          <button class="btn-primary" id="avisarBtn"><i class="ri-bell-line"></i> Avise-me</button>
+        </div>
+
+        <p class="pequeno">Enquanto isso, explore outras áreas do Connect Pet 🐾</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById('avisarBtn');
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      btn.innerHTML = '<i class="ri-check-line"></i> Salvo';
+      btn.disabled = true;
+      btn.classList.add('saved');
+      setTimeout(() => {
+        btn.innerHTML = '<i class="ri-bell-line"></i> Avise-me';
+        btn.disabled = false;
+        btn.classList.remove('saved');
+      }, 3000);
+    });
+  </script>
 </body>
 </html>

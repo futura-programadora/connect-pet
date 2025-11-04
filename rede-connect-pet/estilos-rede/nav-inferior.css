@@ -17,3 +17,75 @@
     --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 
+/*MENU FIXO INFERIOR*/
+
+/* ===== MENU INFERIOR FIXO (MOBILE) ===== */
+.nav-inferior {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  z-index: 1000; /* Mantém acima do conteúdo */
+}
+
+/* ÍCONES */
+.nav-inferior a {
+  flex: 1;
+  text-align: center;
+  color: #555;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: all 0.2s ease;
+}
+
+/* ÍCONES ATIVOS */
+.nav-inferior a.ativo {
+  background-color: #6c39bd45;
+  border-radius: 15px;
+  color: var(--roxo);
+}
+
+/* ÍCONES IMG */
+.nav-inferior img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+/* HOVER (efeito ao tocar ou passar o mouse) */
+.nav-inferior a:hover img,
+.nav-inferior a:hover i {
+  transform: scale(1.2);
+}
+
+/* ÍCONE DO MEIO (botão de criar) – destaque */
+.nav-inferior a:nth-child(3) img {
+  width: 42px;
+  height: 42px;
+  margin-top: -20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/*RESPONSIVIDADE ___________________*/ 
+
+/* EXIBIÇÃO APENAS EM TELAS PEQUENAS */
+@media (min-width: 768px) {
+  .nav-inferior {
+    display: none;
+  }
+
+}  
+
+/* Espaço para não cobrir conteúdo */
+body {
+  padding-bottom: 70px; /* Garante que o conteúdo não fique atrás do menu */
+}

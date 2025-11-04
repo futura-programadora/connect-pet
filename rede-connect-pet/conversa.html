@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--FONTE-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversa Pet | Connect Pet</title>
 
-    <!--REMIXICON-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./estilos-rede/conversa.css">
-    <title>Connect pet</title>
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./estilos-rede/conversa.css">
 </head>
 <body>
-    <section class="container">
-        
-    </section>
+  <section class="chat-container">
+    
+    <!-- TOPO -->
+    <header class="chat-topo">
+      <a href="javascript:history.back()" class="voltar"><i class="ri-arrow-left-line"></i></a>
+      <img src="../imagens/mia.png" alt="Foto do pet" class="foto-perfil">
+      <div class="info-pet">
+        <h2>Mia</h2>
+        <p>online agora</p>
+      </div>
+    </header>
+
+    <!-- CORPO DO CHAT -->
+    <div class="chat-mensagens">
+      <div class="msg recebida">
+        <p>Au au! Como foi o passeio hoje? 🐾</p>
+        <span class="hora-msg">09:42</span>
+      </div>
+
+      <div class="msg enviada">
+        <p>Foi ótimo! Corri muito e fiz novos amigos no parque 😄</p>
+        <span class="hora-msg">09:44</span>
+      </div>
+
+      <div class="msg recebida">
+        <p>Ah que bom!</p>
+        <span class="hora-msg">09:45</span>
+      </div>
+
+      <div class="msg recebida">
+        <p>Oi colega</p>
+        <span class="hora-msg">09:46</span>
+      </div>
+      
+    </div>
+
+    <!-- CAMPO DE ENVIO -->
+    <form class="chat-input">
+      <input type="text" placeholder="Envie uma mensagem" required>
+      <button type="submit"><i class="ri-send-plane-2-fill"></i></button>
+    </form>
+
+  </section>
 </body>
 </html>

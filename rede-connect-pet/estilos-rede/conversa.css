@@ -1,19 +1,199 @@
 @charset "UTF-8";
 
-.suez-one-regular {
-  font-family: "Suez One", serif;
-}
-
+/* ====== VARIÁVEIS ====== */
 :root {
-    --preto: #000000;
-    --roxo: #5f0fe2;
-    --laranja: #ff914d;
-    --verde: #2ecc71;
-    --branco-amarelado: #F3EEE8;
-    --branco: #f5f5f5;
-    --fundo-post: #EFEFEF;
-
-    --border-padrao: 10px;
-    --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
+  --roxo-principal: #5f0fe2;
+  --roxo-claro: #b998e5;
+  --branco-amarelado: #f3eee8;
+  --branco: #ffffff;
+  --cinza-claro: #f0f0f0;
+  --texto-escuro: #2a2a2a;
+  --borda-arred: 14px;
+  --laranja: #ff914d;
 }
 
+/* ====== GERAL ====== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--branco-amarelado);
+  font-family: "Suez One", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--texto-escuro);
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 480px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--branco);
+  border-radius: var(--borda-arred);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* ====== CABEÇALHO ====== */
+.chat-topo {
+  display: flex;
+  align-items: center;
+  background-color: var(--roxo-principal);
+  color: var(--branco);
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.chat-topo .voltar {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.chat-topo .foto-perfil {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--branco);
+}
+
+.chat-topo .info-pet h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.chat-topo .info-pet p {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ====== ÁREA DE MENSAGENS ====== */
+.chat-mensagens {
+
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  /* permite rolar verticalmente */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+  /* rolagem suave */
+  max-height: calc(100vh - 150px);
+  /* ajusta para não ocupar a tela inteira */
+
+
+}
+
+.msg {
+  max-width: 75%;
+  padding: 10px 15px;
+  border-radius: var(--borda-arred);
+  line-height: 1.4;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  position: relative;
+}
+
+/* ====== HORÁRIO DAS MENSAGENS ====== */
+.msg .hora-msg {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* para melhor legibilidade conforme o tipo */
+.msg.enviada .hora-msg {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.msg.recebida .hora-msg {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+.msg.recebida {
+  align-self: flex-start;
+  background-color: #bb91ff;
+  color: var(--branco);
+  border-bottom-left-radius: 0;
+}
+
+.msg.enviada {
+  align-self: flex-end;
+  background-color: var(--roxo-principal);
+  color: var(--branco);
+  border-bottom-right-radius: 0;
+}
+
+/* ====== INPUT ====== */
+.chat-input {
+  display: flex;
+  align-items: center;
+  background-color: var(--branco);
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  gap: 8px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--borda-arred);
+  font-size: 1rem;
+  background-color: var(--cinza-claro);
+  outline: none;
+}
+
+.chat-input button {
+  background-color: var(--roxo-principal);
+  border: none;
+  color: var(--branco);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.chat-input button:hover {
+  background-color: var(--roxo-claro);
+  transform: scale(1.05);
+}
+
+/* ====== SCROLL PERSONALIZADO ====== */
+.chat-mensagens::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-mensagens::-webkit-scrollbar-thumb {
+  background-color: var(--roxo-principal);
+  border-radius: 10px;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 600px) {
+  .chat-container {
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .chat-topo .foto-perfil {
+    width: 42px;
+    height: 42px;
+  }
+
+  .chat-input input {
+    font-size: 0.95rem;
+  }
+}
