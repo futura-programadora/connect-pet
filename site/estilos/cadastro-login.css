@@ -38,13 +38,13 @@ form {
   border-radius: var(--border-padrao);
   border: 1px solid var(--branco);
 
-  & section {
+  & div {
     width: 45%;
     margin: auto;
     max-width: 400px;
   }
 
-  & section > h2 {
+  & div > h2 {
     font-family: "Suez One";
     color: var(--branco);
     text-align: center;
@@ -52,7 +52,7 @@ form {
     font-size: 16px;
   }
 
-  & section > button {
+  & div > button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,7 +161,7 @@ input {
     padding: 20px;
   }
 
-  form section {
+  form div {
     width: 100%;
     margin-bottom: 20px;
   }

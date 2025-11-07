@@ -11,13 +11,15 @@
     <!--REMIXICON-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
 
+    <!--ESTILOS-->
     <link rel="stylesheet" href="./estilos-match/match-inicio.css">
+    <link rel="stylesheet" href="../rede-connect-pet/estilos-rede/nav-inferior.css">
     <title>Connect pet</title>
 </head>
 <body>
-    <section class="container">
+    <div class="container">
         <header>
-            <section class="topo-header">
+            <div class="topo-header">
                 <a href="../rede-connect-pet/tela-inicial.html"><img src="../imagens/logo-matchpet-provisoria.png" alt="" class="matchpet"></a>
                 <button popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
 
@@ -44,10 +46,10 @@
                         <p>Sair</p>
                     </button>
                 </div>
-            </section>
-            <section>
+            </div>
+            <div>
                 <a href="./perfil.html?pet_id=1"><img src="../imagens/rex.png" alt="" class="foto-perfil-pet"></a>
-                <section class="barra-pesquisa-filtro">
+                <div class="barra-pesquisa-filtro">
                     <div class="barra-de-pesquisa">
                         <input class="pesquisa" type="text" placeholder="Pesquisar">
                         <button class="pesquisar">
@@ -63,7 +65,7 @@
                         <button class="Mais-vistos">Mais vistos</button>
                         <button class="Amigos">Amigos</button>
                     </div>
-                </section>
+                </div>
 
                 <!--Aparecera apenas para pc -->
                 <div class="navegacao-pc">
@@ -98,7 +100,7 @@
                         <p>Favoritos</p>
                     </a>
                 </div>
-            </section>
+            </div>
         </header>
 
         <main class="perfis-match">
@@ -152,6 +154,26 @@
             <img src="../imagens/match-chat.png" alt="">
             <p>Seus chats <i class="ri-heart-line"></i></p>
         </a>
-    </section>
+
+        <!--APARECE APENAS PARA CELULAR-->
+        <nav class="nav-inferior">
+            <a href="../rede-connect-pet/tela-inicial.html" title="Início">
+                <i class="ri-home-2-line"></i>
+            </a>
+
+            <a href="../rede-connect-pet/trofeus.html" title="Medalhas">
+                <i class="ri-award-line"></i>
+            </a>
+            <a href="../rede-connect-pet/criar-post.html">
+                <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+            </a>
+            <a href="../rede-connect-pet/chat-pet.html">
+                <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+            </a>
+            <a href="../rede-connect-pet/favoritos.html">
+                <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+            </a>
+        </nav>
+    </div>
 </body>
 </html>

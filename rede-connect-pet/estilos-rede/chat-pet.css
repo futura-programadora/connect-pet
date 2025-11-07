@@ -290,6 +290,15 @@ header {
 }
 
 /*CONVERSAS*/
+.conversas {
+  display: flex;
+  flex-direction: column; 
+  align-items: stretch;   /* faz cada .conversa ocupar 100% da largura */
+  width: 100%;
+  padding: 0;             
+  margin: 0;              
+  box-sizing: border-box;
+}
 
 .conversa {
   background-color: rgba(128, 128, 128, 0.438);
@@ -297,9 +306,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin: 10px;
-  width: 500px;
+  margin: 10px;          
+  width: 100%;            
+  max-width: 700px;       
   border-radius: 25px;
+  box-sizing: border-box; /* evita que o padding ultrapasse a largura */
 }
 
 .detalhes-conversa {
@@ -346,6 +357,11 @@ header {
     object-fit: cover;
   }
 
+  .conversa {
+    width: 95%;
+    margin: 10px ;  
+  }
+
 }
 
 @media (max-width: 478px) {
@@ -364,6 +380,7 @@ header {
   }
 
   .conversa {
-    width: 350px;
+    width: 95%;
+    margin: 10px ;  
   }
 }

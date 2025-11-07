@@ -16,9 +16,9 @@
     <title>Connect pet</title>
 </head>
 <body>
-    <section class="container">
+    <div class="container">
         <header>
-            <section class="topo-header">
+            <div class="topo-header">
                 <i class="ri-heart-3-fill"></i>
                 <button class="btn-opcoes" popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
 
@@ -43,10 +43,10 @@
                         <p>Sair</p>
                     </button>
                 </div>
-            </section>
-            <section class="bottom-header">
+            </div>
+            <div class="bottom-header">
                 <a href="./perfil.html?pet_id=1"><img src="../imagens/rex.png" alt="" class="foto-perfil-pet"></a>
-                <section class="barra-pesquisa-filtro">
+                <div class="barra-pesquisa-filtro">
                     <div class="barra-de-pesquisa">
                         <input class="pesquisa" type="text" placeholder="Pesquisar">
                         <button class="pesquisar">
@@ -62,7 +62,7 @@
                         <button class="Mais-vistos">Mais vistos</button>
                         <button class="Amigos">Amigos</button>
                     </div>
-                </section>
+                </div>
 
                 <!--Aparecera apenas para pc -->
                 <div class="navegacao-pc">
@@ -97,7 +97,7 @@
                         <p>Favoritos</p>
                     </a>
                 </div>
-            </section>
+            </div>
         </header>
 
         <main class="conteudos-favoritos">
@@ -133,6 +133,39 @@
                     </section>
                 </div>
             </section>
+            <section class="regiao-post">
+                <!-- Conteúdo dinâmico carregado aqui, apenas posts com o pet_id diferente do pet_id do perfil -->
+                <div class="container-post">
+                    <div class="header-post">
+                        <div class="foto-perfil-e-nome">
+                            <a href="./conhecer-perfil.html?pet_id=1"><img src="../imagens/logo-connect.jpg" alt=""></a>
+                            <div>
+                                <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
+                                <div class="nome-pet-dopet">
+                                    <p class="nome-pet">Nome do pet</p>
+                                    <p class="identificacao-pet">@dopet</p>
+                                </div>
+                                <p class="data-post">2 dias atrás</p>
+                            </div>
+                        </div>
+                        <button class="btn-seguir">Seguir</button>
+                    </div>
+                    <div class="conteudo-post">
+                        <img src="../imagens/logo-connect.jpg" alt="">
+                    </div>
+                    <!-- a quantia de comentarios deve vir atraves do id do post então certifique-se de colocar esse campo na tabela de posts-->
+                    <section class="reacoes">
+                        <button class="btn-comentarios" onclick="abrirComentarios()">
+                            <span class="quantidade-comentarios">12</span> comentários
+                        </button>
+                        <div>
+                            <button class="btn-comentar">Comentar</button>
+                            <button class="curtida"><i class="ri-heart-line"></i></button>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
         </main>
 
         <!--
@@ -162,6 +195,6 @@
                 <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
             </a>
         </nav>
-    </section>
+    </div>
 </body>
 </html>

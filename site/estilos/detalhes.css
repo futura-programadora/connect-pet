@@ -34,11 +34,11 @@
     min-width: 300px;
   }
 
-  & section>img {
+  & div>img {
     width: 60px;
   }
 
-  & section {
+  & div {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -18,10 +18,10 @@
 </head>
 
 <body>
-    <section class="container">
+    <div class="container">
         <header class="perfil-header">
             <!-- Topo com botão voltar e título -->
-            <section class="topo-perfil">
+            <div class="topo-perfil">
                 <a href="./tela-inicial.html" class="voltar">
                     <i class="ri-arrow-left-line"></i>
                     <p>Perfil</p>
@@ -60,7 +60,7 @@
                     </a>
                 </div>
 
-            </section>
+            </div>
 
             <!-- Capa de fundo -->
             <section class="capa-fundo">
@@ -79,15 +79,15 @@
         </header>
 
         <section class="dados-pet">
-            <section class="primeiros-dados">
-                <section class="sessao1">
+            <div class="primeiros-dados">
+                <div class="sessao1">
                     <!--dados ficticios, usar <span> para os valores e <p> para os rótulos, atraves do back end, use as classes -->
                     <p class="idade"><strong>Idade:</strong><span> 2 anos</span></p>
                     <p class="raça"><strong>Raça:</strong><span></span> tricolor</span></p>
                     <p class="sexo"><strong>Sexo:</strong><span> Macho</span></p>
                     <p class="amigos"><strong>Amigos:</strong><span> 5 amigos</span></p>
-                </section>
-                <section class="sessao2">
+                </div>
+                <div class="sessao2">
                     <!--usar as classes para substituir os valores pelos reais-->
                     <h2>Personalidade</h2>
                     <p class="personalidade">
@@ -96,15 +96,17 @@
                     <p class="personalidade">
                         Amoroso
                     </p>
-                </section>
-            </section>
-            <section class="sessao3">
-                <h2>Descrição</h2>
-                <p class="sobre-mim">
-                    Sou um cachorro muito amigável e adoro fazer novos amigos. Gosto de passear no parque e brincar com
-                    meus brinquedos favoritos. Estou sempre pronto para uma aventura!
-                </p>
-            </section>
+                </div>
+            </div>
+            <div class="descricao-pet">
+                <div class="sessao3">
+                    <h2>Descrição</h2>
+                    <p class="sobre-mim">
+                        Sou um cachorro muito amigável e adoro fazer novos amigos. Gosto de passear no parque e brincar com
+                        meus brinquedos favoritos. Estou sempre pronto para uma aventura!
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section class="filtros">
@@ -115,7 +117,7 @@
             <button class="aba-amigos">Amigos</button>
         </section>
 
-        <section class="conteudo">
+        <main class="conteudo">
             <!--aparecer apenas no pc-->
             <div class="posts-recentes-apenas-pc">
                 <h2>posts recentes</h2>
@@ -228,7 +230,7 @@
                     </section>
                 </div>
             </section>
-
+        </main>
         <nav class="nav-inferior">
             <a href="./tela-inicial.html" title="Início">
                 <i class="ri-home-2-line"></i>
@@ -247,7 +249,7 @@
                 <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
             </a>
         </nav>
-    </section>
+    </div>
 </body>
 
 </html>
