@@ -304,7 +304,7 @@ header {
   flex-wrap: wrap;
   background-color: var(--branco-amarelado);
   padding: 40px 15px;
-  justify-content: center;
+  justify-content: start;
   /* centraliza os cards */
   gap: 25px;
 
@@ -430,6 +430,16 @@ header {
     object-fit: cover;
   }
 
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--branco-amarelado);
+    padding: 40px 15px;
+    justify-content: center;
+    /* centraliza os cards */
+    gap: 25px;
+  }
+
 }
 
 @media (max-width: 478px) {
@@ -446,6 +456,8 @@ header {
   #filtros {
     margin: auto;
   }
+
+  
 }
 
 /* Espaço para não cobrir conteúdo */
