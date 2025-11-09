@@ -21,9 +21,10 @@
         <header>
             <div class="topo-header">
                 <a href="../rede-connect-pet/tela-inicial.html"><img src="../imagens/logo-matchpet-provisoria.png" alt="" class="matchpet"></a>
-                <button popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
+                <h2 class="bem-vindo-match"><strong>Bem-vindo</strong> ao Match Pet</h2>
+                <button  id="outras-opcoes" popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
 
-                <h2><strong>Bem-vindo</strong> ao Match Pet</h2>
+                
 
                 <div id="mais-opcoes" popover>
                     <a href="../rede-connect-pet/perfil.html" title="Perfil">
@@ -47,7 +48,7 @@
                     </button>
                 </div>
             </div>
-            <div>
+            <div class="bottom-header">
                 <a href="./perfil.html?pet_id=1"><img src="../imagens/rex.png" alt="" class="foto-perfil-pet"></a>
                 <div class="barra-pesquisa-filtro">
                     <div class="barra-de-pesquisa">
@@ -60,6 +61,7 @@
                         <img src="../icons/icone-filtro.png" alt="">
                     </button>
                     <div id="filtros" popover>
+                        <h2>Filtros</h2>
                         <button class="Recentes">Recentes</button>
                         <button class="Ultima-semana">Última semana</button>
                         <button class="Mais-vistos">Mais vistos</button>
@@ -111,9 +113,9 @@
                         <a href="../rede-connect-pet/conhecer-perfil.html?pet_id=1"><img src="../imagens/logo-connect.jpg" alt=""></a>
                         <div>
                             <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
-                            <div class="nome-pet-@">
+                            <div class="nome-pet-dopet">
                                 <p class="nome-pet">Nome do pet</p>
-                                <p class="@pet">@dopet</p>
+                                <p class="identificacao-pet">@dopet</p>
                             </div>
                             <p class="data-post">2 dias atrás</p>
                         </div>
@@ -131,17 +133,18 @@
                 <div class="comentarios">
                     <div class="comentario">
                         <div class="header-comentario">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="../imagens/mia.png" alt=""></a>
                             <div>
                                 <p class="nome-usuario-comentario">Nome do usuário</p>
                                 <p class="conteudo-comentario">Quem sabe você não poderia almoçar comigo!</p>
                             </div>
                         </div>
-                        <div>
+                        <div class="acoes">
                             <button popovertarget="acoes" class="acoes-comentario">...</button>
                             <button class="curtir-comentario"><i class="ri-heart-line"></i></button>
                         </div>
                     </div>
+                    
                 </div>
                 <section class="adicionar-comentario">
                     <input type="text" placeholder="Adicione um comentário...">
