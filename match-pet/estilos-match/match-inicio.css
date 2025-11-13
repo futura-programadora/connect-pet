@@ -144,7 +144,7 @@ header {
 }
 
 .pesquisa {
-  width: 83%;
+  width: 87%;
   padding: 15px;
   border: none;
   border-radius: 40px;
@@ -514,11 +514,7 @@ header {
   }
 
   .barra-de-pesquisa input{
-    width: 85%;
-  }
-
-  .pesquisa {
-    width: 70%;
+    width: 82%;
   }
 
   .conteudo-post img{
@@ -548,11 +544,7 @@ header {
 
 @media (max-width: 478px) {
   .barra-de-pesquisa input{
-    width: 80%;
-  }
-
-  .pesquisa {
-    width: 60%;
+    width: 75%;
   }
 
   .bem-vindo-match {

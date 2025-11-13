@@ -11,64 +11,67 @@
     <!--REMIXICON-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
 
+    <!--ESTILOS-->
     <link rel="stylesheet" href="./estilos-match/match-chat.css">
+    <link rel="stylesheet" href="../rede-connect-pet/estilos-rede/nav-inferior.css">
     <title>Connect pet</title>
 </head>
 <body>
     <div class="container">
         <header>
             <!--Aparecera apenas para pc -->
-            <div class="navegacao-pc">
+            <div class="topo-header">
                 <a href="javascript:history.back()" class="voltar">
-                    <i class="ri-arrow-left-line"></i>
-                </a>
-                <button popovertarget="menu-pc">
-                    <img src="../imagens/barra-inferior/Vector.png" alt="navegacao-pc">
-                </button>
-            </div>
-
-            <div id="menu-pc" popover>
-                <a href="../rede-connect-pet/tela-inicial.html" class="ativo" title="Início">
-                    <i class="ri-home-2-line"></i>
-                    <p>Início</p>
-                </a>
-
-                <a href="../rede-connect-pet/trofeus.html" title="Medalhas">
-                    <i class="ri-award-line"></i>
-                    <p>Troféus</p>
-                </a>
-
-                <a href="../rede-connect-pet/criar-post.html">
-                    <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
-                    <p>Criar Publicação</p>
-                </a>
-
-                <a href="../rede-connect-pet/chat-pet.html">
-                    <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
-                    <p>Chatpet</p>
-                </a>
-
-                <a href="../rede-connect-pet/favoritos.html">
-                    <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
-                    <p>Favoritos</p>
-                </a>
-            </div>
-            <img src="../imagens/match-chat.png" alt="">
-            <div class="barra-pesquisa-filtro">
-                <div class="barra-de-pesquisa">
-                    <input class="pesquisa" type="text" placeholder="Pesquisar">
-                    <button class="pesquisar">
-                        <img src="../icons/icone-pesquisar.png" alt="">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
+                <div class="navegacao-pc">
+                    
+                    <button popovertarget="menu-pc">
+                        <img src="../imagens/barra-inferior/Vector.png" alt="navegacao-pc">
                     </button>
                 </div>
-                <button popovertarget="filtros" class="filtrar">
-                    <img src="../icons/icone-filtro.png" alt="">
-                </button>
-                <div id="filtros" popover>
-                    <button class="Recentes">Recentes</button>
-                    <button class="Ultima-semana">Última semana</button>
-                    <button class="Mais-vistos">Mais vistos</button>
-                    <button class="Amigos">Amigos</button>
+                
+                <div id="menu-pc" popover>
+                    <a href="../rede-connect-pet/tela-inicial.html" class="ativo" title="Início">
+                        <i class="ri-home-2-line"></i>
+                        <p>Início</p>
+                    </a>
+                    <a href="../rede-connect-pet/trofeus.html" title="Medalhas">
+                        <i class="ri-award-line"></i>
+                        <p>Troféus</p>
+                    </a>
+                    <a href="../rede-connect-pet/criar-post.html">
+                        <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+                        <p>Criar Publicação</p>
+                    </a>
+                    <a href="../rede-connect-pet/chat-pet.html">
+                        <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+                        <p>Chatpet</p>
+                    </a>
+                    <a href="../rede-connect-pet/favoritos.html">
+                        <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+                        <p>Favoritos</p>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <img src="../imagens/match-chat.png" alt="">
+                <div class="barra-pesquisa-filtro">
+                    <div class="barra-de-pesquisa">
+                        <input class="pesquisa" type="text" placeholder="Pesquisar">
+                        <button class="pesquisar">
+                            <img src="../icons/icone-pesquisar.png" alt="">
+                        </button>
+                    </div>
+                    <button popovertarget="filtros" class="filtrar">
+                        <img src="../icons/icone-filtro.png" alt="">
+                    </button>
+                    <div id="filtros" popover>
+                        <button class="Recentes">Recentes</button>
+                        <button class="Ultima-semana">Última semana</button>
+                        <button class="Mais-vistos">Mais vistos</button>
+                        <button class="Amigos">Amigos</button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -80,7 +83,7 @@
         <section class="conversas">
             <a href="./conversa.html?id_conversa=1">
                 <div class="conversa">
-                    <div>
+                    <div class="detalhes-conversa">
                         <img src="../imagens/mia.png" alt="Logo do amigo" class="logo-amigo">
                         <div class="nome-utm-amigo">
                             <h2>Mia</h2>
@@ -89,7 +92,7 @@
                     </div>
                     <div class="mensagens-nao-lidas">
                         <div class="mensagens-novas">
-                            <span class="count-novas-mensagens"></span>
+                            <span class="count-novas-mensagens">1</span>
                         </div>
                     </div>
                 </div>
