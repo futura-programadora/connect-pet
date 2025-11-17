@@ -17,3 +17,229 @@
     --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 
+/* ======== ESTILOS GERAIS ======== */
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--branco-amarelado);
+  padding-bottom: 70px;
+}
+
+/* ======== CABEÇALHO ======== */
+
+header {
+  background-color: var(--roxo);
+  color: var(--branco);
+  padding-bottom: 15px;
+}
+
+.topo-perfil {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.navegacao-pc button {
+  position: relative;
+  background: none;
+  border: none;
+
+  & img {
+    width: 40px;
+  }
+}
+
+#menu-pc {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 220px;
+  margin-left: auto;
+  margin-top: 65px;
+  border: 1px solid #6c39bd57;
+
+  & a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    padding: 3px;
+
+    & p {
+      color: var(--preto);
+    }
+  }
+
+  & a[href="#"] {
+    background-color: #6c39bd62;
+    border: 2px solid var(--roxo);
+    border-radius: 30px;
+  }
+
+  & a:hover {
+    background-color: #6c39bd62;
+    border-radius: 30px;
+  }
+
+  & a > img, a > i {
+    width: 40px;
+    font-size: 40px;
+    color: var(--preto);
+    margin-left: 5px;
+  }
+}
+
+.voltar {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.perfil-info {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.096);
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .foto-pet {
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 50px;
+  }
+}
+
+/* ======== ÁREA DO TÍTULO ======== */
+
+.area-info {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.area-info img {
+    width: 50px;
+}
+
+.area-info h2 {
+    margin: 10px 0 0 0;
+    font-size: 22px;
+    color: var(--preto);
+}
+
+/* ======== CAIXA DO CONTEÚDO ======== */
+
+.container {
+    width: 92%;
+    margin: 20px auto 40px;
+    background: var(--branco-amarelado);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 8px #0001;
+}
+
+/* ======== NÍVEIS DE TROFÉUS ======== */
+
+.nivel-titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px 0 10px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    background: var(--gradiente-principal);
+    box-shadow: 0 2px 4px #0003;
+}
+
+/* ======== GRID ======== */
+
+.trofeus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.trofeu {
+    background: var(--branco);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 5px #0002;
+    transition: .2s ease;
+}
+
+.trofeu i {
+    font-size: 40px;
+    color: var(--roxo);
+}
+
+.trofeu p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--preto);
+}
+
+/* Troféus bloqueados (sem conquistar) */
+.trofeu.bloqueado {
+    opacity: .4;
+    filter: grayscale(100%);
+}
+
+/* Troféus desbloqueados */
+.trofeu:not(.bloqueado):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px #0003;
+}
+
+/* ===== TROFÉU LIBERADO ===== */
+.trofeu.liberado {
+    background-color: var(--roxo);   /* 🔥 Cor de destaque da conquista */
+    color: var(--branco);               /* Ícone + texto brancos */
+    border: 2px solid #00000010;
+    opacity: 1;                         /* Sempre visível */
+    transform: scale(1.02);             /* Leve destaque */
+    transition: .2s ease;
+
+    & p {
+      color: var(--branco);
+    }
+}
+
+.trofeu.liberado i {
+    color: var(--branco);               /* Ícone branco */
+}
+
+.trofeu.liberado:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 4px 12px #0003;       /* Mais destaque no hover */
+}
+
+
+/* ======== RESPONSIVO ======== */
+
+@media (max-width: 768px) {
+  .navegacao-pc {
+    display: none;
+  }
+
+  .perfil-info {
+    width: 80%;
+  }
+}
