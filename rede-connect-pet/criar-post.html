@@ -1,250 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--FONTE-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="../imagens/logo-connect.jpg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--REMIXICON-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+  <!--FONTE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="../imagens/logo-connect.jpg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
 
-    <title>Connect Pet — Em desenvolvimento Criar postagem</title>
+  <!--REMIXICON-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
 
-    <style>
-      @charset "UTF-8";
+  <!--ESTILOS-->
+  <link rel="stylesheet" href="./estilos-rede/criar-post.css">
+  <link rel="stylesheet" href="./estilos-rede/nav-inferior.css">
+  <link rel="stylesheet" href="./estilos-rede/tela-inicial.css">
 
-      :root {
-        --roxo-principal: #6b39bd;
-        --roxo-claro: #9f7bdc;
-        --branco-amarelado: #F3EEE8;
-        --branco: #ffffff;
-        --cinza-claro: #f4f4f6;
-        --texto: #2b2b2b;
-        --sombra: rgba(0,0,0,0.06);
-        --radius: 14px;
-      }
+  <title>Connect Pet — Criar postagem</title>
 
-      * { box-sizing: border-box; }
-      html, body {
-        height: 100%;
-        margin: 0;
-        font-family: "Suez One", serif;
-        background: var(--branco-amarelado);
-        color: var(--texto);
-      }
 
-      .dev-page {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 32px;
-      }
-
-      .card {
-        width: 100%;
-        max-width: 820px;
-        background: var(--branco);
-        border-radius: var(--radius);
-        box-shadow: 0 10px 30px var(--sombra);
-        padding: 28px;
-        display: grid;
-        grid-template-columns: 180px 1fr;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .illustration {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px;
-      }
-
-      .pata {
-        width: 140px;
-        height: 140px;
-        fill: var(--roxo-claro);
-        stroke: var(--roxo-principal);
-        stroke-width: 3;
-        border-radius: 50%;
-        background: linear-gradient(180deg, rgba(107,57,189,0.06), transparent);
-        padding: 8px;
-        box-shadow: 0 6px 18px rgba(107,57,189,0.06), inset 0 -6px 12px rgba(255,255,255,0.6);
-        transition: transform .32s ease;
-      }
-
-      .pata:hover {
-        transform: translateY(-6px);
-      }
-
-      .titulo {
-        margin: 0 0 6px 0;
-        color: var(--roxo-principal);
-        font-size: 1.75rem;
-      }
-
-      .descricao {
-        margin: 0 0 18px 0;
-        color: #444;
-        font-size: 1rem;
-        line-height: 1.45;
-      }
-
-      .status-row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 14px;
-        flex-wrap: wrap;
-      }
-
-      .status-text {
-        font-weight: 600;
-        color: #666;
-        font-size: 0.95rem;
-        min-width: 82px;
-      }
-
-      .progress {
-        flex: 1 1 220px;
-        height: 12px;
-        background: var(--cinza-claro);
-        border-radius: 999px;
-        overflow: hidden;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
-      }
-
-      .progress-fill {
-        height: 100%;
-        background: var(--roxo-principal);
-        width: 34%;
-        transition: width 600ms cubic-bezier(.22,.9,.32,1);
-      }
-
-      .percent {
-        font-size: 0.85rem;
-        color: #666;
-        min-width: 40px;
-        text-align: right;
-      }
-
-      .acoes {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        margin-top: 6px;
-      }
-
-      .btn-outline, .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 14px;
-        border-radius: 10px;
-        text-decoration: none;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 0.95rem;
-      }
-
-      .btn-outline {
-        background: transparent;
-        color: var(--roxo-principal);
-        border: 1px solid rgba(107,57,189,0.12);
-        transition: all .18s ease;
-      }
-
-      .btn-outline:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(107,57,189,0.06);
-      }
-
-      .btn-primary {
-        background: var(--roxo-principal);
-        color: var(--branco);
-        border: none;
-      }
-
-      .btn-primary.saved {
-        background: #3f1f7a;
-        opacity: 0.95;
-      }
-
-      .pequeno {
-        margin: 16px 0 0 0;
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      @media (max-width: 880px) {
-        .card {
-          grid-template-columns: 1fr;
-          padding: 20px;
-          gap: 14px;
-        }
-
-        .illustration { order: -1; }
-        .pata { width: 120px; height: 120px; }
-      }
-
-      @media (max-width: 420px) {
-        .titulo { font-size: 1.4rem; }
-        .descricao { font-size: 0.95rem; }
-        .progress { height: 10px; }
-      }
-
-      .btn-outline:focus, .btn-primary:focus {
-        outline: 3px solid rgba(107,57,189,0.18);
-        outline-offset: 3px;
-      }
-    </style>
 </head>
+
 <body>
-  <main class="dev-page">
-    <div class="card">
+  <div class="conteiner">
+    <header>
+      <div class="topo-header">
+        <a href="../match-pet/match-inicio.html"><img src="../imagens/logo-matchpet-provisoria.png" alt=""
+            class="matchpet"></a>
+        <button id="outras-opcoes" popovertarget="mais-opcoes"><i class="ri-menu-line"></i></button>
 
-      <div>
-        <h1 class="titulo">Área em desenvolvimento</h1>
-        <p class="descricao">
-          Estamos preparando algo especial para os pets — logo você poderá Criar postagens Novas.
-        </p>
+        <div id="mais-opcoes" popover>
+          <a href="./perfil.html" title="Perfil">
+            <i class="ri-user-line"></i>
+            <p>Perfil</p>
+          </a>
 
-        <div class="status-row">
-          <div class="status-text">Progresso</div>
-          <div class="progress">
-            <div class="progress-fill"></div>
-          </div>
-          <small class="percent">34%</small>
+          <a href="./configuracoes.html" title="Configurações">
+            <i class="ri-settings-3-line"></i>
+            <p>Configurações</p>
+          </a>
+
+          <a href="./ajuda.html" title="Ajuda">
+            <i class="ri-question-line"></i>
+            <p>Ajuda</p>
+          </a>
+
+          <button onclick="sair()" class="sair" title="Sair">
+            <i class="ri-shut-down-line"></i>
+            <p>Sair</p>
+          </button>
         </div>
-
-        <div class="acoes">
-          <a href="javascript:history.back()" class="btn-outline"><i class="ri-arrow-left-line"></i> Voltar</a>
-          <button class="btn-primary" id="avisarBtn"><i class="ri-bell-line"></i> Avise-me</button>
-        </div>
-
-        <p class="pequeno">Enquanto isso, explore outras áreas do Connect Pet 🐾</p>
       </div>
-    </div>
-  </main>
+      <div class="bottom-header">
+        <a href="./perfil.html?pet_id=1"><img class="foto-perfil-pet" src="../imagens/rex.png" alt=""></a>
+        <div class="barra-pesquisa-filtro">
+          <div class="barra-de-pesquisa">
+            <input class="pesquisa" type="text" placeholder="Pesquisar">
+            <button class="pesquisar">
+              <img src="../icons/icone-pesquisar.png" alt="">
+            </button>
+          </div>
+          <button popovertarget="filtros" class="filtrar">
+            <img src="../icons/icone-filtro.png" alt="">
+          </button>
+          <div id="filtros" popover>
+            <h2>Filtros</h2>
+            <button class="Recentes">Recentes</button>
+            <button class="Ultima-semana">Última semana</button>
+            <button class="Mais-vistos">Mais vistos</button>
+            <button class="Amigos">Amigos</button>
+          </div>
+        </div>
 
-  <script>
-    const btn = document.getElementById('avisarBtn');
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      btn.innerHTML = '<i class="ri-check-line"></i> Salvo';
-      btn.disabled = true;
-      btn.classList.add('saved');
-      setTimeout(() => {
-        btn.innerHTML = '<i class="ri-bell-line"></i> Avise-me';
-        btn.disabled = false;
-        btn.classList.remove('saved');
-      }, 3000);
-    });
-  </script>
+        <!--Aparecera apenas para pc -->
+        <div class="navegacao-pc">
+          <button popovertarget="menu-pc">
+            <img src="../imagens/barra-inferior/Vector.png" alt="navegacao-pc">
+          </button>
+        </div>
+
+        <div id="menu-pc" popover>
+          <a href="./tela-inicial.html" class="ativo" title="Início">
+            <i class="ri-home-2-line"></i>
+            <p>Início</p>
+          </a>
+
+          <a href="./trofeus.html" title="Medalhas">
+            <i class="ri-award-line"></i>
+            <p>Troféus</p>
+          </a>
+
+          <a href="#">
+            <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+            <p>Criar Publicação</p>
+          </a>
+
+          <a href="./chat-pet.html">
+            <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+            <p>Chatpet</p>
+          </a>
+
+          <a href="./favoritos.html">
+            <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+            <p>Favoritos</p>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="criar-post">
+      <section class="container-post-form">
+        <div class="topo-post">
+          <button class="btn-emojis" popovertarget="emojis"><i class="ri-emoji-sticker-line"></i>
+          </button>
+          <div id="emojis" popover class="seletor-emojis">
+            <span>😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥳 🤠 🥸 😏 😒 🙄
+              🤥 😳 🥺 😢 😭 🤤 🤩 🥵 🥶 😱 😨 😰 🤯 😴 🥱 🤗 🤔 🤭 🤫 🤐 🤨</span>
+          </div>
+          <button id="btn-publicar">Publicar</button>
+        </div>
+
+        <form class="montar-post">
+          <textarea name="" id="conteudo-post-texto" placeholder="em que você está pensando...."></textarea>
+          <select name="categoria" id="categorias">
+            <option value="">Categoria</option>
+          </select>
+          <input type="file" id="adicionar-imagem" accept="image/*">
+        </form>
+      </section>
+
+      <section class="pre-visualizacao">
+        <h2>Pré-visualização</h2>
+        <section class="regiao-post">
+                <!-- Conteúdo dinâmico carregado aqui, apenas posts com o pet_id diferente do pet_id do perfil -->
+                <div class="container-post">
+                    <div class="header-post">
+                        <div class="foto-perfil-e-nome">
+                            <a href=""><img id="foto-perfil" src="../imagens/fundo-cinza.png" alt=""></a>
+                            <div>
+                                <!--os dados reais aqui podem aparecer no paragrafo mesmo, use suas classes -->
+                                <div class="nome-pet-dopet">
+                                    <p class="nome-pet">Nome do pet</p>
+                                    <p class="identificacao-pet">@dopet</p>
+                                </div>
+                                <p class="data-post">2 dias atrás</p>
+                            </div>
+                        </div>
+                        <button class="btn-seguir">Seguir</button>
+                    </div>
+                    <div class="conteudo-post">
+                        <img id="img-conteudo" src="../imagens/fundo-cinza.png" alt="">
+                    </div>
+                    <!-- a quantia de comentarios deve vir atraves do id do post então certifique-se de colocar esse campo na tabela de posts-->
+                    <section class="reacoes">
+                        <button class="btn-comentarios" onclick="abrirComentarios()">
+                            <span class="quantidade-comentarios">12</span> comentários
+                        </button>
+                        <div>
+                            <button class="btn-comentar">Comentar</button>
+                            <button class="curtida"><i class="ri-heart-line"></i></button>
+                        </div>
+                    </section>
+                </div>
+            </section>
+      </section>
+    </main>
+
+    <!-- NAV INFERIOR -->
+    <nav class="nav-inferior">
+      <a href="./tela-inicial.html" title="Início">
+        <i class="ri-home-2-line"></i>
+      </a>
+
+      <a href="./trofeus.html" title="Medalhas">
+        <i class="ri-award-line"></i>
+      </a>
+      <a href="./criar-post.html" class="ativo">
+        <img title="Criar" src="../imagens/barra-inferior/criar.png" alt="criar">
+      </a>
+      <a href="./chat-pet.html">
+        <img title="Chat pet" src="../imagens/barra-inferior/chatpet.png" alt="Chat pet">
+      </a>
+      <a href="./favoritos.html">
+        <img title="favoritos" src="../imagens/barra-inferior/heart-3-line 3.png" alt="favoritos">
+      </a>
+    </nav>
+  </div>
 </body>
+
 </html>

@@ -5,15 +5,274 @@
 }
 
 :root {
-    --preto: #000000;
-    --roxo: #5f0fe2;
-    --laranja: #ff914d;
-    --verde: #2ecc71;
-    --branco-amarelado: #F3EEE8;
-    --branco: #f5f5f5;
-    --fundo-post: #EFEFEF;
+  --preto: #000000;
+  --roxo: #5f0fe2;
+  --laranja: #ff914d;
+  --verde: #2ecc71;
+  --branco-amarelado: #F3EEE8;
+  --branco: #f5f5f5;
+  --fundo-post: #EFEFEF;
 
-    --border-padrao: 10px;
-    --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
+  --border-padrao: 10px;
+  --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+}
+
+/*container criar post **/
+
+/* ----- ESTILO DO MAIN ----- */
+.criar-post {
+  display: flex;
+  gap: 20px;
+  padding: 0px 20px ;
+  background: #f2eee9;
+  /* fundo bege claro */
+
+  margin: 20px auto;
+  max-width: 1700px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
+
+/* ----- ÁREA DO FORMULÁRIO (lado esquerdo) ----- */
+.container-post-form {
+  flex: 1;
+  background: #fff;
+  border: 3px solid #9b4dff50;
+  /* borda azul igual à imagem */
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ----- Topo com emojis e botão publicar ----- */
+.topo-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-emojis {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #9b4dff;
+  /* roxo igual ao ícone */
+  cursor: pointer;
+}
+
+#btn-publicar {
+  background: linear-gradient(90deg, #c28cff, #8a4fff);
+  padding: 8px 22px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ----- Montar post ----- */
+.montar-post textarea {
+  width: 100%;
+  height: 160px;
+  resize: none;
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.montar-post select {
+  margin-top: 20px;
+  padding: 8px 14px;
+  border-radius: 18px;
+  border: 1px solid #d5cfe3;
+  color: #9b4dff;
+  background: #faf7ff;
+  cursor: pointer;
+}
+
+#adicionar-imagem {
+  margin-top: 20px;
+  padding: 50px;
+  border: 2px dashed #d7d4d0;
+  background: #fbf9f8;
+  text-align: center;
+  color: #aaa;
+  border-radius: 14px;
+  width: 100%;
+}
+
+/* ----- Popover emojis ----- */
+.seletor-emojis {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 20px;
+  margin-top: 220px;
+  margin-left: 22px;
+  width: 260px;
+}
+
+
+
+
+/*FORM*/
+
+.container-post-form {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+/**POST*/
+
+.pre-visualizacao h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pre-visualizacao {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--branco-amarelado);
+  padding: 40px 15px;
+  justify-content: start;
+
+  width: 50%;
+
+  & img {
+    width: 45px;
+  }
+}
+
+.regiao-post {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.526);
+  border-radius: 2px;
+  margin: auto;
+  /* cada card ocupa no mínimo 320px, mas se adapta */
+  max-width: 450px;
+}
+
+.container-post {
+  background-color: var(--fundo-post);
+  border-radius: 5px;
+}
+
+.header-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  & button {
+    background-color: #b200b2;
+    border: none;
+    padding: 10px 12px;
+    color: white;
+    border-radius: 50px;
+  }
+
+  & button:hover {
+    background-color: #870087;
+  }
+
+}
+
+.identificacao-pet,
+.data-post {
+  color: gray;
+}
+
+.foto-perfil-e-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  & img {
+    border-radius: 50%;
+  }
+
+
+}
+
+.nome-pet-dopet {
+  display: flex;
+  gap: 20px;
+}
+
+.conteudo-post img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.reacoes {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.reacoes div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-comentarios {
+  border: none;
+  color: gray;
+  padding: 10px 0px;
+}
+
+.btn-comentar {
+  background-color: #2ecc7098;
+  padding: 0px 5px;
+  border: none;
+  padding: 10px 15px;
+  color: rgb(0, 90, 0);
+  border: 1px solid green;
+  border-radius: 50px;
+}
+
+.curtida {
+  border: none;
+  color: var(--preto);
+  font-size: 40px;
+}
+
+/* ----- RESPONSIVIDADE ----- */
+@media (max-width: 900px) {
+  .criar-post {
+    flex-direction: column;
+  }
+
+  .pre-visualizacao {
+    margin-top: 20px;
+  }
+
+  .container-post-form,
+  .pre-visualizacao {
+    width: 100%;
+  }
+
+  .pre-visualizacao {
+    width: 100%;
+  }
+}

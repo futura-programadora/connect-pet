@@ -299,7 +299,7 @@ header {
 
 /*POSTS*/
 
-.posts {
+.posts, .pre-visualizacao {
   display: flex;
   flex-wrap: wrap;
   background-color: var(--branco-amarelado);
@@ -417,6 +417,10 @@ header {
 
 @media (max-width: 768px) {
   .navegacao-pc {
+    display: none;
+  }
+
+  #menu-pc {
     display: none;
   }
 

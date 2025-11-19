@@ -388,6 +388,10 @@ header {
     display: none;
   }
 
+  #menu-pc {
+    display: none;
+  }
+
   .barra-de-pesquisa input {
     width: 85%;
   }
