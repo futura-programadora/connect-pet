@@ -1,30 +1,75 @@
 @charset "UTF-8";
 
-.suez-one-regular {
-  font-family: "Suez One", serif;
-}
-
 :root {
-    --preto: #000000;
-    --roxo: #5f0fe2;
-    --laranja: #ff914d;
-    --verde: #2ecc71;
-    --branco-amarelado: #F3EEE8;
-    --branco: #f5f5f5;
-    --fundo-post: #EFEFEF;
+  --creme: #FBF3E7;
+  --tinta: #241C14;
+  --cinza: #746B5E;
 
-    --border-padrao: 10px;
+  --verde: #2F6B4F;
+  --verde-claro: #DCEEE3;
+  --laranja: #E8703A;
+  --laranja-claro: #FBE4D6;
+  --amarelo: #F2B705;
+  --amarelo-claro: #FDF0CC;
+  --azul: #3E7CB1;
+  --azul-claro: #DEEBF5;
 
+  --fonte-titulo: "Fredoka", sans-serif;
+  --fonte-corpo: "Work Sans", sans-serif;
+  --fonte-carimbo: "Space Mono", monospace;
+
+  --border-padrao: 10px;
 }
+
+/* ===== RODAPÉ "COLEIRA" =====
+   Conceito: o rodapé é a coleira do site — faixa escura costurada, com
+   uma placa/tag redonda (o logo) pendurada bem no meio da borda de cima,
+   como a plaquinha de identificação de um pet. */
 
 footer {
-  background: linear-gradient(to bottom, #c7c7f6 0%, #b4b4e8 100%);
-  color: #000;
-  font-family: "Poppins", sans-serif;
+  position: relative;
+  background-color: var(--tinta);
+  color: var(--creme);
+  font-family: var(--fonte-corpo);
   text-align: center;
-  padding-top: 20px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  padding-top: 54px;
+  margin-top: 40px;
+}
+
+/* linha de "costura" tracejada na borda de cima da coleira */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: repeating-linear-gradient(90deg, var(--amarelo) 0 10px, transparent 10px 20px);
+}
+
+/* ====== PLACA / TAG PENDURADA ====== */
+.coleira-tag {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84px;
+  height: 84px;
+  background: var(--creme);
+  border: 4px solid var(--amarelo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.coleira-tag img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* ====== TOPO ====== */
@@ -32,7 +77,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 0 20px 24px;
 }
 
 .footer-top .logo {
@@ -40,21 +85,13 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  text-align: left;
-  max-width: 700px;
-}
-
-.footer-top img {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  object-fit: cover;
+  max-width: 560px;
 }
 
 .footer-top p {
   font-weight: 500;
-  color: #4a00a0;
+  color: var(--creme);
+  opacity: 0.85;
   max-width: 500px;
   font-size: 14px;
 }
@@ -66,7 +103,9 @@ footer {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 60px;
-  padding: 20px 40px;
+  padding: 24px 40px;
+  border-top: 1px dashed #ffffff30;
+  border-bottom: 1px dashed #ffffff30;
 }
 
 .footer-middle .col {
@@ -74,53 +113,54 @@ footer {
   min-width: 220px;
 }
 
-.footer-middle .col h4 {
-  font-weight: 700;
+.footer-middle .col h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
   font-size: 15px;
-  margin-bottom: 8px;
-  color: #000;
+  margin-bottom: 10px;
+  color: var(--amarelo);
 }
 
 .footer-middle .col p {
-  margin: 3px 0;
+  margin: 5px 0;
   font-size: 14px;
+  color: var(--creme);
+  opacity: 0.9;
 }
 
 .footer-middle .col span {
   font-weight: 600;
+  font-family: var(--fonte-carimbo);
 }
 
 /* ====== PARCEIROS ====== */
 .parceiros {
   display: flex;
   gap: 8px;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .parceiros .icon {
-  width: 28px;
-  height: 28px;
-  background-color: #a6a6a6;
-  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff20;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
 }
 
-/* ====== RODAPÉ FINAL ====== */
+/* ====== RODAPÉ FINAL: placa gravada ====== */
 .footer-bottom {
-  background-color: #ffa869;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
+  background-color: var(--laranja);
+  color: var(--creme);
+  font-family: var(--fonte-carimbo);
+  font-size: 13px;
+  letter-spacing: 0.02em;
   text-align: center;
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 /* ====== RESPONSIVIDADE ====== */
 @media (max-width: 900px) {
-  .footer-top .logo {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .footer-middle {
     flex-direction: column;
     align-items: center;
@@ -141,17 +181,26 @@ footer {
     font-size: 13px;
   }
 
-  .footer-top img {
-    width: 55px;
-    height: 55px;
+  .coleira-tag {
+    width: 68px;
+    height: 68px;
+    top: -26px;
+  }
+
+  .coleira-tag img {
+    width: 42px;
+    height: 42px;
+  }
+
+  footer {
+    padding-top: 44px;
   }
 
   .footer-middle {
-    padding: 15px;
+    padding: 20px 15px;
   }
 
   .footer-bottom {
     font-size: 12px;
   }
 }
-

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="../imagens/logo-connect.jpg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!--REMIXICON-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
@@ -24,78 +24,100 @@
     <div class="container">
         <header>
             <section class="pesquisa-login">
-                <img src="../imagens/logo-connect.jpg" alt="" class="logo">
+                <img src="../imagens/logo-connect.jpg" alt="Logo Connect Pet" class="logo">
                 <section class="barra-pesquisar">
-
-                    <input id="pesquisa" type="text" placeholder="Pesquisar sobre connect pet ">
-                    <i class="ri-search-2-line"></i>
+                    <form role="search" action="#" onsubmit="return false;">
+                        <input id="pesquisa" type="text" placeholder="Pesquisar sobre connect pet">
+                        <button type="submit" aria-label="Pesquisar">
+                            <i class="ri-search-2-line"></i>
+                        </button>
+                    </form>
                 </section>
                 <section class="login-cadastro">
                     <p><a href="./login.html">Login</a> / <a href="./cadastro.html">Cadastro</a></p>
                 </section>
             </section>
-            <section class="navegacao">
-                <a href="../index.html" class="link">
-                    <i class="ri-home-9-line"></i>
-                    <p>Início</p>
-                </a>
-                <a href="./detalhes.html" class="link">
-                    <i class="ri-menu-fold-line"></i>
-                    <p>Detalhes</p>
-                </a>
-                <a href="" class="redes instagram">
-                    <i class="ri-instagram-line"></i>
-                </a>
-                <a href="" class="redes facebook">
-                    <i class="ri-facebook-fill"></i>
-                </a>
-                <a href="" class="redes whatsapp">
-                    <i class="ri-whatsapp-line"></i>
-                </a>
-            </section>
+            <nav class="navegacao">
+                <ul>
+                    <li>
+                        <a href="../index.html" class="link">
+                            <i class="ri-home-9-line"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./detalhes.html" class="link">
+                            <i class="ri-menu-fold-line"></i>
+                            <span>Detalhes</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="redes-sociais">
+                    <li>
+                        <a href="#" class="redes instagram" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="redes facebook" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="redes whatsapp" aria-label="WhatsApp">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
         <section class="cadastro-login-container">
             <form action="../rede-connect-pet/tela-inicial.html" class="formulario">
                 <div>
+                    <span class="selo">🐾 bem-vindo de volta</span>
                     <h2>Fazer login</h2>
                     <fieldset>
-                        <legend><label for="usuario">Usuario/Email</label></legend>
+                        <legend><label for="usuario">Usuário/Email</label></legend>
                         <input id="usuario" type="text" required>
                     </fieldset>
                     <fieldset>
                         <legend><label for="senha">Senha</label></legend>
-                        <input id="senha" type="password">
+                        <input id="senha" type="password" required>
                     </fieldset>
-                    <button class="bnt-logar">Logar</button>
-                    <button class="continuar-com-google">
+                    <button class="bnt-logar" type="submit">Logar</button>
+                    <button class="continuar-com-google" type="button">
                         <img src="../imagens/logo-google.png" alt="">
                         <p>Continuar com Google</p>
                     </button>
                     <p>Não tem uma conta? <a href="./cadastro.html">Faça seu cadastro</a></p>
                 </div>
-                <img class="img-post" src="../imagens/img-login-cadastro.png" alt="">
+                <div class="painel-imagem">
+                    <img class="img-post" src="../imagens/img-login-cadastro.png" alt="Ilustração de pets usando o Connect Pet em um celular">
+                </div>
             </form>
             <p>A configuração da conta pode ser finalizada ao entrar na rede</p>
         </section>
 
         <footer>
+            <div class="coleira-tag">
+                <img src="../imagens/logo-connect.jpg" alt="Logo Connect Pet">
+            </div>
             <div class="footer-top">
                 <div class="logo">
-                    <img src="../imagens/logo-connect.jpg" alt="Logo ConnectPet">
                     <p>Conheça mais sobre nossa rede | Deixe seu feedback ele é importante para a ConnectPet</p>
                 </div>
             </div>
 
             <div class="footer-middle">
                 <div class="col">
-                    <h4>Política de privacidade</h4>
+                    <h3>Política de privacidade</h3>
                     <p>Termos de Uso</p>
                     <p>Contato direto: <span>(11) 99999-9999</span></p>
                 </div>
 
                 <div class="col">
-                    <h4>Parceiros:</h4>
+                    <h3>Parceiros:</h3>
                     <div class="parceiros">
                         <div class="icon"></div>
                         <div class="icon"></div>
@@ -104,7 +126,7 @@
                 </div>
 
                 <div class="col">
-                    <h4>Email para suporte:</h4>
+                    <h3>Email para suporte:</h3>
                     <p>connectpet.suporte@gmail.com</p>
                 </div>
             </div>
@@ -113,8 +135,7 @@
                 <p>Copyright 2025 © Todos os direitos reservados à ConnectPet</p>
             </div>
         </footer>
-
     </div>
 </body>
-
+<script src="./scripts/header.js" defer></script>
 </html>

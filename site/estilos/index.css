@@ -1,32 +1,50 @@
 @charset "UTF-8";
 
-.suez-one-regular {
-  font-family: "Suez One", serif;
-}
+/* ===== IDENTIDADE CONNECT PET ===== */
+/* Conceito: "plaquinha de coleira" — cada pet tem uma etiqueta, e o site é
+   organizado como um mural de plaquinhas. Fredoka pros títulos (redonda,
+   brincalhona), Work Sans pro corpo, Space Mono nas etiquetas/carimbos. */
 
 :root {
-  --preto: #000000;
-  --roxo: #5f0fe2;
-  --laranja: #ff914d;
-  --verde: #2ecc71;
-  --branco-amarelado: #F3EEE8;
-  --branco: #f5f5f5;
-  --fundo-post: #EFEFEF;
-  --fundo-apresentacao: #F3EEE8;
+  --creme: #FBF3E7;
+  --tinta: #241C14;
+  --cinza: #746B5E;
+
+  --verde: #2F6B4F;
+  --verde-claro: #DCEEE3;
+  --laranja: #E8703A;
+  --laranja-claro: #FBE4D6;
+  --amarelo: #F2B705;
+  --amarelo-claro: #FDF0CC;
+  --azul: #3E7CB1;
+  --azul-claro: #DEEBF5;
+
+  --fonte-titulo: "Fredoka", sans-serif;
+  --fonte-corpo: "Work Sans", sans-serif;
+  --fonte-carimbo: "Space Mono", monospace;
 
   --border-padrao: 10px;
-  --gradiente-principal: linear-gradient(90deg, #FFC395 0%, #6B39BD 51%, #34087C 100%);
+  --border-suave: 18px;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--tinta);
 }
 
 /*APRESENTAÇÃO DO CONNECT PET*/
 
 .apresentacao {
-  background-color: var(--fundo-apresentacao);
+  background-color: var(--verde-claro);
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  color: #ffffff70;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 30px;
+  padding: 50px 30px;
   margin-bottom: 40px;
+  overflow: hidden;
 
   & img {
     width: 350px;
@@ -40,23 +58,69 @@
   margin: auto;
 }
 
+.img-apresentacao img {
+  filter: drop-shadow(0 18px 30px rgba(36, 28, 20, 0.25));
+  transform: rotate(2deg);
+}
+
 .texto {
   width: 45vw;
   margin: auto;
+  color: var(--tinta);
 
-  & h2 {
-    font-family: "Suez One";
-    font-size: 25px;
-    font-weight: normal;
-    color: var(--roxo);
+  & .selo {
+    display: inline-block;
+    font-family: var(--fonte-carimbo);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    background-color: var(--creme);
+    border: 1.5px dashed var(--verde);
+    color: var(--verde);
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 14px;
+    transform: rotate(-1.5deg);
+  }
+
+  & h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--tinta);
   }
 
   & p {
     font-size: 16px;
-    font-family: sans-serif;
+    font-family: var(--fonte-corpo);
     margin-top: 15px;
-    color: gray;
+    color: var(--cinza);
+    max-width: 46ch;
   }
+}
+
+.botao-cta {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 28px;
+  background-color: var(--laranja);
+  color: var(--creme);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 40px;
+  box-shadow: 0 4px 0 #a84b21;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.botao-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #a84b21;
+}
+
+.botao-cta:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #a84b21;
 }
 
 /*DIFERENCIAIS*/
@@ -64,48 +128,58 @@
 .diferenciais {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 24px;
   padding: 25px 30px;
-  margin-bottom: 20px;
-  
+  margin-bottom: 30px;
 }
 
 .card {
+  --cor-card: var(--verde);
+  --cor-card-claro: var(--verde-claro);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 26px 22px;
   gap: 15px;
-  background-color: #F8F8FF;
-  border: 2px solid gray;
-  border-radius: var(--border-padrao);
-  height: 200px;
+  background-color: var(--creme);
+  border: 2px solid var(--cor-card);
+  border-radius: var(--border-suave);
+  min-height: 200px;
   margin: auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.205);
+  box-shadow: 5px 5px 0 var(--cor-card-claro);
+  transition: transform 0.2s ease;
 }
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.diferenciais .card:nth-child(2) { --cor-card: var(--laranja); --cor-card-claro: var(--laranja-claro); }
+.diferenciais .card:nth-child(3) { --cor-card: var(--amarelo); --cor-card-claro: var(--amarelo-claro); }
+.diferenciais .card:nth-child(4) { --cor-card: var(--azul); --cor-card-claro: var(--azul-claro); }
 
 .card>img {
-  background-color: var(--verde);
+  background-color: var(--cor-card);
   padding: 10px;
   width: 70px;
-  border-radius: var(--border-padrao);
-  border: 4px solid #73FFAE55;
-  margin-top: -35px;
+  border-radius: 50%;
+  border: 4px solid var(--cor-card-claro);
+  margin-top: -55px;
 }
 
-.texto-card>h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--roxo);
-  font-family: "Suez One";
-  margin-bottom: 15px;
+.texto-card>h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--cor-card);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 10px;
 }
 
 .texto-card>p {
   font-size: 14px;
-  color: gray;
-  font-family: sans-serif;
+  color: var(--cinza);
+  font-family: var(--fonte-corpo);
 }
 
 
@@ -117,7 +191,7 @@
   justify-content: center;
   gap: 20px;
   padding: 50px 20px;
-  background-color: #faf6f2;
+  background-color: var(--creme);
 }
 
 /* FOTO GRANDE (HAMSTER) */
@@ -125,9 +199,10 @@
   position: relative;
   width: 300px;
   height: 320px;
-  border-radius: 12px;
+  border-radius: var(--border-suave);
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 6px 6px 0 var(--amarelo-claro);
+  border: 3px solid var(--tinta);
   background: #fff;
 }
 
@@ -141,13 +216,12 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(251, 243, 231, 0.88);
   padding: 10px;
   text-align: center;
+  font-family: var(--fonte-titulo);
   font-weight: 600;
-  color: #4b0082;
-  border-radius: 10px 10px 0 0;
+  color: var(--verde);
 }
 
 /* FOTO DUPLA (CACHORRO E GATO) */
@@ -161,9 +235,10 @@
   position: relative;
   width: 300px;
   height: 150px;
-  border-radius: 12px;
+  border-radius: var(--border-suave);
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 6px 6px 0 var(--laranja-claro);
+  border: 3px solid var(--tinta);
   background: #fff;
 }
 
@@ -178,36 +253,34 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(251, 243, 231, 0.9);
   padding: 10px 20px;
   border-radius: 30px 0 0 30px;
+  font-family: var(--fonte-titulo);
   font-weight: 600;
-  color: #4b0082;
-  box-shadow: inset -5px 0 10px rgba(75,0,130,0.3);
+  color: var(--verde);
 }
 
-/*DEPOIPETS*/
+/*DEPOIPETS — cada depoimento vira uma plaquinha pendurada*/
 
-/* ====== ESTILO GERAL ====== */
 .depoimentos {
-  background-color: #c8f5e6;
-  padding: 40px 20px;
+  background-color: var(--tinta);
+  padding: 60px 20px 50px;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--fonte-corpo);
 }
 
 .depoimentos h2 {
-  font-size: 28px;
-  background-color: #FFFFFF60;
-  font-weight: 500;
-  margin-bottom: 40px;
-  color: #222;
-  border: 2px solid #8fd8c3;
+  font-family: var(--fonte-titulo);
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 46px;
+  color: var(--creme);
+  border: 2px dashed var(--amarelo);
   display: inline-block;
   padding: 8px 40px;
   border-radius: 40px;
-  width: 65%;
+  max-width: 65%;
 }
 
 /* ====== CONTAINER ====== */
@@ -215,22 +288,42 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 40px;
 }
 
-/* ====== BLOCO DEPOIMENTO ====== */
+/* ====== BLOCO DEPOIMENTO — plaquinha com furinho de argola ====== */
 .depoimento {
-  background: #fff;
-  border-radius: 25px;
-  padding: 25px 30px;
-  box-shadow: 5px 5px 0 #f0cbbf;
+  position: relative;
+  background: var(--creme);
+  border-radius: 20px;
+  padding: 32px 30px 25px;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.25);
   width: 350px;
-  transition: 0.3s;
+  transition: 0.25s;
   text-align: left;
+  rotate: -1.5deg;
+}
+
+.container-depoimentos .depoimento:nth-child(2) { rotate: 1deg; }
+.container-depoimentos .depoimento:nth-child(3) { rotate: -1deg; }
+
+/* furinho de argola no topo da plaquinha */
+.depoimento::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 28px;
+  width: 22px;
+  height: 22px;
+  background: var(--tinta);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 5px var(--creme);
 }
 
 .depoimento:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  rotate: 0deg;
 }
 
 /* ====== CABEÇALHO PET (foto + nome + etiqueta) ====== */
@@ -238,7 +331,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .pet-nome img {
@@ -246,18 +339,21 @@
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid var(--tinta);
 }
 
-.pet-nome h2 {
+.pet-nome h3 {
+  font-family: var(--fonte-titulo);
   font-size: 18px;
-  font-weight: 700;
-  color: #222;
+  font-weight: 600;
+  color: var(--tinta);
   margin: 0;
   border: none;
 }
 
 .pet-nome p {
-  font-size: 13px;
+  font-family: var(--fonte-carimbo);
+  font-size: 12px;
   border-radius: 20px;
   padding: 4px 10px;
   margin-left: auto;
@@ -266,30 +362,29 @@
 /* ====== TEXTO ====== */
 .depoimento > div > p {
   font-size: 14px;
-  color: #333;
-  line-height: 1.4;
+  color: var(--tinta);
+  line-height: 1.5;
 }
 
-.aventureiro { background: #e9edff; color: #4b5ed7; border: #4b5ed7; }
-.exploradora { background: #f5e7ff; color: #b066e1; border: #b066e1; }
-.fofinho { background: #e9f5ff; color: #6ba8ff; border: #6ba8ff; }
+.aventureiro { background: var(--laranja-claro); color: #a84b21; }
+.exploradora { background: var(--verde-claro); color: var(--verde); }
+.fofinho { background: var(--amarelo-claro); color: #8a6600; }
 
 
 /*CARROSSEL DE IMAGENS PERSONALIZADAS*/
-/* ====== SEÇÃO PRINCIPAL ====== */
 .carrossel {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%; /* 🔹 Cresce até 1200px, depois para */
-  margin: 40px auto;
+  width: 60%;
+  margin: 50px auto;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: var(--border-suave);
+  border: 3px solid var(--tinta);
 }
 
-/* ====== CONTAINER ====== */
-.container {
+.carrossel-container {
   width: 100%;
   overflow: hidden;
 }
@@ -298,7 +393,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 20px;
+  border-radius: 16px;
   object-fit: cover;
 }
 
@@ -307,21 +402,28 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: white;
-  border: none;
-  color: black;
+  background: var(--creme);
+  border: 2px solid var(--tinta);
+  color: var(--tinta);
   font-size: 24px;
   border-radius: 50%;
   width: 45px;
   height: 45px;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
   transition: all 0.2s ease;
   z-index: 10;
 }
 
 .seta:hover {
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.08);
+  background-color: var(--amarelo);
+}
+
+.seta:focus-visible,
+#pesquisa ~ button:focus-visible {
+  outline: 3px solid var(--verde);
+  outline-offset: 2px;
 }
 
 .esquerda {
@@ -352,9 +454,9 @@
 
   .foto1 > div,
   .foto > div {
-    width: 90%; /* mesma largura para todos */
-    max-width: 400px; /* limite para não esticar demais */
-    height: auto; /* altura conforme a imagem */
+    width: 90%;
+    max-width: 400px;
+    height: auto;
   }
 
   .foto img,
@@ -373,6 +475,7 @@
 
   .depoimento {
     width: 90%;
+    rotate: 0deg !important;
   }
 
   .apresentacao {
@@ -380,10 +483,14 @@
     flex-wrap: wrap-reverse;
     justify-content: center;
   }
-  
+
   .texto {
     width: 90%;
     margin-top: 20px;
+  }
+
+  .depoimentos h2 {
+    max-width: 90%;
   }
 }
 
@@ -410,8 +517,6 @@
     height: 32px;
     font-size: 18px;
   }
-
-
 }
 
 @media (max-width: 400px) {

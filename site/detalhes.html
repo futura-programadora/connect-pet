@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="../imagens/logo-connect.jpg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!--REMIXICON-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
@@ -22,80 +22,129 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="pagina">
         <header>
             <section class="pesquisa-login">
-                <img src="../imagens/logo-connect.jpg" alt="" class="logo">
+                <img src="../imagens/logo-connect.jpg" alt="Logo Connect Pet" class="logo">
                 <section class="barra-pesquisar">
-
-                    <input id="pesquisa" type="text" placeholder="Pesquisar sobre connect pet ">
-                    <i class="ri-search-2-line"></i>
+                    <form role="search" action="#" onsubmit="return false;">
+                        <input id="pesquisa" type="text" placeholder="Pesquisar sobre connect pet">
+                        <button type="submit" aria-label="Pesquisar">
+                            <i class="ri-search-2-line"></i>
+                        </button>
+                    </form>
                 </section>
                 <section class="login-cadastro">
                     <p><a href="./login.html">Login</a> / <a href="./cadastro.html">Cadastro</a></p>
                 </section>
             </section>
-            <section class="navegacao">
-                <a href="../index.html" class="link">
-                    <i class="ri-home-9-line"></i>
-                    <p>Início</p>
-                </a>
-                <a href="#" class="link">
-                    <i class="ri-menu-fold-line"></i>
-                    <p>Detalhes</p>
-                </a>
-                <a href="" class="redes instagram">
-                    <i class="ri-instagram-line"></i>
-                </a>
-                <a href="" class="redes facebook">
-                    <i class="ri-facebook-fill"></i>
-                </a>
-                <a href="" class="redes whatsapp">
-                    <i class="ri-whatsapp-line"></i>
-                </a>
-            </section>
+            <nav class="navegacao">
+                <ul>
+                    <li>
+                        <a href="../index.html" class="link">
+                            <i class="ri-home-9-line"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link" aria-current="page">
+                            <i class="ri-menu-fold-line"></i>
+                            <span>Detalhes</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="redes-sociais">
+                    <li>
+                        <a href="#" class="redes instagram" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="redes facebook" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="redes whatsapp" aria-label="WhatsApp">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
         <section class="detalhes">
-            <img class="posts-pets" src="../imagens/mini-posts/img-detalhes.png" alt="">
-            <div>
-                <img src="../imagens/coracao-pata.png" alt="">
+            <img class="posts-pets" src="../imagens/mini-posts/img-detalhes.png" alt="Celular e cartões de posts de pets sobrepostos, mostrando um gato, um cachorro puppye e uma curtida">
+            <div class="texto-detalhes">
+                <span class="selo">🐾 como funciona</span>
+                <img class="icone-coracao" src="../imagens/coracao-pata.png" alt="">
+                <h2>Quem posta é o seu pet, não você</h2>
                 <p>No Connect Pet os pets são quem postam, comentam e fazem amizades. Aqui os tutores apenas ajudam a
                     escrever, mas a voz é sempre dos bichinhos!</p>
             </div>
         </section>
 
-        <section class="mini-posts">
-            <img src="../imagens/mini-posts/post1.png" alt="">
-            <img src="../imagens/mini-posts/post2.png" alt="">
-            <img src="../imagens/mini-posts/post3.png" alt="">
-            <img src="../imagens/mini-posts/post4.png" alt="">
-            <img src="../imagens/mini-posts/post5.png" alt="">
+        <section class="secao-recursos">
+            <div class="titulo-secao">
+                <span class="selo">✨ o que você pode fazer</span>
+                <h2>Tudo pensado para os bichinhos serem protagonistas</h2>
+            </div>
+            <div class="mini-posts">
+                <div class="card-recurso card-recurso--verde">
+                    <img src="../imagens/mini-posts/post1.png" alt="Criar perfis exclusivos para cada pet, com foto, biografia e preferências">
+                </div>
+                <div class="card-recurso card-recurso--laranja">
+                    <img src="../imagens/mini-posts/post2.png" alt="Adicionar amiguinhos: rede de amizade entre animais">
+                </div>
+                <div class="card-recurso card-recurso--amarelo">
+                    <img src="../imagens/mini-posts/post3.png" alt="Participar de grupos temáticos: gatos, cachorros, exóticos e mais">
+                </div>
+                <div class="card-recurso card-recurso--azul">
+                    <img src="../imagens/mini-posts/post4.png" alt="Curtir e comentar nas postagens de outros pets">
+                </div>
+                <div class="card-recurso card-recurso--roxo">
+                    <img src="../imagens/mini-posts/post5.png" alt="Postar como se fosse o próprio pet: texto, fotos e vídeos">
+                </div>
+            </div>
         </section>
 
-        <section class="posts">
-            <img src="../imagens/mini-posts/lindinha.png" alt="">
-            <img src="../imagens/mini-posts/furinho.png" alt="">
-            <img src="../imagens/mini-posts/floquinho.png" alt="">
+        <section class="secao-destaques">
+            <div class="titulo-secao">
+                <span class="selo">🐾 pets em destaque</span>
+                <h2>Quem já está fazendo a festa por aqui</h2>
+            </div>
+            <div class="posts">
+                <div class="card-post">
+                    <img src="../imagens/mini-posts/lindinha.png" alt="Post da gata Lindinha, foco na diversão e na imaginação">
+                </div>
+                <div class="card-post">
+                    <img src="../imagens/mini-posts/furinho.png" alt="Post do furão Furinho, ambiente leve, seguro e positivo">
+                </div>
+                <div class="card-post">
+                    <img src="../imagens/mini-posts/floquinho.png" alt="Post do hamster Floquinho, design feito para os animais serem os protagonistas">
+                </div>
+            </div>
         </section>
 
         <footer>
+            <div class="coleira-tag">
+                <img src="../imagens/logo-connect.jpg" alt="Logo Connect Pet">
+            </div>
             <div class="footer-top">
                 <div class="logo">
-                    <img src="../imagens/logo-connect.jpg" alt="Logo ConnectPet">
                     <p>Conheça mais sobre nossa rede | Deixe seu feedback ele é importante para a ConnectPet</p>
                 </div>
             </div>
 
             <div class="footer-middle">
                 <div class="col">
-                    <h4>Política de privacidade</h4>
+                    <h3>Política de privacidade</h3>
                     <p>Termos de Uso</p>
                     <p>Contato direto: <span>(11) 99999-9999</span></p>
                 </div>
 
                 <div class="col">
-                    <h4>Parceiros:</h4>
+                    <h3>Parceiros:</h3>
                     <div class="parceiros">
                         <div class="icon"></div>
                         <div class="icon"></div>
@@ -104,7 +153,7 @@
                 </div>
 
                 <div class="col">
-                    <h4>Email para suporte:</h4>
+                    <h3>Email para suporte:</h3>
                     <p>connectpet.suporte@gmail.com</p>
                 </div>
             </div>
@@ -113,7 +162,6 @@
                 <p>Copyright 2025 © Todos os direitos reservados à ConnectPet</p>
             </div>
         </footer>
-
     </div>
 </body>
 
