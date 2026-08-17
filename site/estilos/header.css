@@ -1,20 +1,24 @@
 @charset "UTF-8";
 
-.suez-one-regular {
-  font-family: "Suez One", serif;
-}
-
 :root {
-  --preto: #000000;
-  --roxo: #5f0fe2;
-  --laranja: #ff914d;
-  --verde: #2ecc71;
-  --branco-amarelado: #F3EEE8;
-  --branco: #f5f5f5;
-  --fundo-post: #EFEFEF;
+  --creme: #FBF3E7;
+  --tinta: #241C14;
+  --cinza: #746B5E;
+
+  --verde: #2F6B4F;
+  --verde-claro: #DCEEE3;
+  --laranja: #E8703A;
+  --laranja-claro: #FBE4D6;
+  --amarelo: #F2B705;
+  --amarelo-claro: #FDF0CC;
+  --azul: #3E7CB1;
+  --azul-claro: #DEEBF5;
+
+  --fonte-titulo: "Fredoka", sans-serif;
+  --fonte-corpo: "Work Sans", sans-serif;
+  --fonte-carimbo: "Space Mono", monospace;
 
   --border-padrao: 10px;
-
 }
 
 * {
@@ -22,75 +26,94 @@
   padding: 0px;
   box-sizing: border-box;
   text-decoration: none;
-
 }
 
 a {
   color: inherit;
 }
 
-img {
-  width: 50px;
-}
+/* Removido o "img { width: 50px; }" global: toda imagem do site já tem uma
+   regra específica (.pesquisa-login img, .card>img, .foto img, etc.). Uma
+   regra solta no seletor "img" vale pra qualquer imagem futura sem classe
+   e é fácil de esquecer que existe. */
 
 header {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: var(--creme);
+  border-bottom: 3px solid var(--tinta);
 }
 
 .pesquisa-login {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid gray;
+  gap: 12px;
+  padding: 12px 20px;
 
   & img {
-    width: 70px;
-    border-radius: 15px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--tinta);
   }
-
 }
 
 .barra-pesquisar {
-  border: 1px solid gray;
+  border: 2px solid var(--tinta);
   display: flex;
   align-items: center;
-  padding: 15px;
-  width: 50vw;
-  max-width: 708px;
-  border-radius: var(--border-padrao);
+  padding: 13px 18px;
+  width: clamp(220px, 50vw, 708px);
+  border-radius: 40px;
+  background-color: #fff;
+
+  & form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
 
   & input {
     outline: none;
     border: none;
     width: 92%;
+    font-family: var(--fonte-corpo);
+    background: transparent;
+  }
+
+  & button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
   }
 
   & i {
     font-size: 20px;
-    color: gray;
+    color: var(--verde);
   }
 }
 
 .login-cadastro {
   display: flex;
   justify-content: center;
-  background-color: var(--roxo);
-  padding: 15px;
-  border-radius: var(--border-padrao);
-  color: var(--branco);
-  font-family: sans-serif;
-  font-weight: bold;
+  background-color: var(--verde);
+  padding: 13px 20px;
+  border-radius: 40px;
+  color: var(--creme);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
   font-size: 14px;
   text-align: center;
+  box-shadow: 0 3px 0 #1d4735;
 
   & p {
     margin: auto;
     text-align: center;
   }
-
 }
 
 /*REDES*/
@@ -99,117 +122,117 @@ header {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  padding: 8px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
 
-  /*link e icone normal*/
-  & .link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 25px;
-    border: 2px solid gray;
-    border-radius: var(--border-padrao);
-    font-weight: bold;
-    color: gray;
-    transition: all 0.3s ease;
+.navegacao ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  list-style: none;
+}
 
-    & i {
-      font-size: 25px;
-      color: gray;
-      margin-right: 5px;
-      font-weight: bold;
-    }
-  }
+.navegacao .link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 22px;
+  border: 2px solid var(--tinta);
+  border-radius: 40px;
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  color: var(--tinta);
+  transition: all 0.2s ease;
+}
 
-  /*link e icone ativo*/
-  & a.link[href="#"] {
-    background-color: #600fe238;
-    border: 2px solid var(--roxo);
-    color: var(--roxo);
-    font-weight: bold;
+.navegacao .link i {
+  font-size: 22px;
+  color: var(--tinta);
+  margin-right: 6px;
+}
 
-    & i {
-      color: var(--roxo);
+/* link ativo: baseado em aria-current="page" em vez de href="#",
+   que marcava como ativo QUALQUER link com href="#" */
+.navegacao .link[aria-current="page"] {
+  background-color: var(--verde);
+  border: 2px solid var(--verde);
+  color: var(--creme);
+}
 
-    }
-  }
+.navegacao .link[aria-current="page"] i {
+  color: var(--creme);
 }
 
 .link:hover {
-  background-color: gray;
-  color: #fff;
+  background-color: var(--tinta);
+  color: var(--creme);
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(128, 128, 128, 0.4);
 }
 
 .link:hover i {
-  color: #fff;
+  color: var(--creme);
 }
 
 .redes {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 12px;
-  border: 1px solid gray;
-  border-radius: var(--border-padrao);
-  font-weight: bold;
-  color: gray;
-
+  justify-content: center;
+  padding: 9px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 40px;
 }
 
 .redes>i {
-  margin-right: 0px;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .instagram {
-  background-color: #e1306b25;
-  border: 2px solid #E1306C;
   color: #E1306C;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .instagram:hover {
   background-color: #E1306C;
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px #e1306b40;
 }
 
 .facebook {
-  background-color: #1877F225;
-  border: 2px solid #1877F2;
   color: #1877F2;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .facebook:hover {
   background-color: #1877F2;
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px #1877F250;
 }
 
 .whatsapp {
-  background-color: #25D36625;
-  border: 2px solid #25D366;
   color: #25D366;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .whatsapp:hover {
   background-color: #25D366;
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px #25D36650;
+}
+
+/* Foco visível pra navegação por teclado */
+.link:focus-visible,
+.redes:focus-visible,
+.barra-pesquisar button:focus-visible {
+  outline: 3px solid var(--verde);
+  outline-offset: 2px;
 }
 
 /* ====== RESPONSIVIDADE ====== */
 @media (max-width: 1024px) {
   .barra-pesquisar {
-    width: 60vw; /* barra menor em telas médias */
-    padding: 12px;
+    padding: 11px 16px;
   }
 
   .barra-pesquisar input {
@@ -222,7 +245,7 @@ header {
 
   .login-cadastro {
     font-size: 13px;
-    padding: 12px;
+    padding: 11px 16px;
   }
 
   .navegacao .link {
@@ -231,23 +254,17 @@ header {
   }
 
   .navegacao .link i {
-    font-size: 22px;
-  }
-
-  .redes {
-    padding: 8px 10px;
-    gap: 8px;
+    font-size: 20px;
   }
 
   .redes>i {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .barra-pesquisar {
-    width: 55%;
-    padding: 10px;
+    padding: 10px 14px;
   }
 
   .barra-pesquisar input {
@@ -256,7 +273,7 @@ header {
 
   .login-cadastro {
     font-size: 12px;
-    padding: 10px ;
+    padding: 10px 14px;
   }
 
   .navegacao .link {
@@ -265,32 +282,63 @@ header {
   }
 
   .navegacao .link i {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .redes>i {
-    font-size: 20px;
+    font-size: 18px;
+  }
+}
+
+/* Abaixo de ~680px a soma logo + busca + botão Login/Cadastro não cabe
+   mais numa linha só. Em vez de deixar o flex-wrap quebrar o último item
+   sozinho e desalinhado, empilha os três de propósito, centralizados. */
+@media (max-width: 680px) {
+  .pesquisa-login {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .barra-pesquisar {
+    width: 100%;
+  }
+
+  /* sem isso o botão Login/Cadastro herdava align-items: stretch do pai
+     e virava uma barra esticada, perdendo a cara de "pill" */
+  .login-cadastro {
+    width: fit-content;
+  }
+
+  /* mesmo raciocínio: empilha o grupo de links e o de redes sociais,
+     cada um centralizado na própria linha */
+  .navegacao {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navegacao ul {
+    justify-content: center;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  .pesquisa-login img {
+    width: 48px;
+  }
+
   .barra-pesquisar {
-    width: 40%;
-    padding: 8px;
+    padding: 8px 14px;
   }
 
   .barra-pesquisar input {
-    width: 80%;
+    width: 85%;
   }
 
   .login-cadastro {
     font-size: 12px;
-    padding: 10px 8px;
-  }
-
-  .navegacao {
-    display: flex;
-    justify-content: center;
+    padding: 10px 16px;
   }
 
   .navegacao .link {
@@ -299,10 +347,10 @@ header {
   }
 
   .navegacao .link i {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .redes>i {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
